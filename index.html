@@ -137,18 +137,13 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: transparent;
-      z-index: 1000;
-      transition: var(--transition-smooth);
-      height: var(--header-height);
-      backdrop-filter: blur(0px);
-    }
-
-    .navbar.scrolled {
       background: rgba(249, 245, 240, 0.9);
       backdrop-filter: blur(20px);
       box-shadow: var(--shadow-medium);
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      height: var(--header-height);
     }
 
     .navbar-container {
@@ -168,14 +163,10 @@
     }
 
     .navbar-logo {
-      height: 65px;
+      height: 55px;
       width: auto;
       transition: var(--transition-smooth);
       filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
-    }
-
-    .navbar.scrolled .navbar-logo {
-      height: 55px;
     }
 
     .navbar-links {
@@ -185,7 +176,7 @@
     }
 
     .navbar-links a {
-      color: var(--white);
+      color: var(--text-dark);
       text-decoration: none;
       font-weight: 500;
       font-size: 1rem;
@@ -193,10 +184,6 @@
       padding: 1rem 0;
       transition: var(--transition-fast);
       letter-spacing: 0.5px;
-    }
-
-    .navbar.scrolled .navbar-links a {
-      color: var(--text-dark);
     }
 
     .navbar-links a::before {
@@ -259,14 +246,10 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      background-color: var(--white);
+      background-color: var(--text-dark);
       left: 0;
       transition: var(--transition-smooth);
       border-radius: 2px;
-    }
-
-    .navbar.scrolled .mobile-menu-btn span {
-      background-color: var(--text-dark);
     }
 
     .mobile-menu-btn span:nth-child(1) { top: 0; }
@@ -1044,7 +1027,7 @@
         <div class="footer-grid">
           <div class="footer-about">
             <div class="footer-logo">
-              <img src="Rio Tierra Logo.webp" alt="Rio Tierra Logo" class="navbar-logo" width="65" height="65">
+              <img src="Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="65" height="65">
             </div>
             <p class="footer-desc">Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design. Our vision is to build developments that enhance lives and create lasting value.</p>
             <div class="footer-social">
