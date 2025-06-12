@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -420,27 +419,40 @@
       margin: 40px 0;
     }
 
-    .download-btn {
-      display: inline-flex;
+    .deed-restrictions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .deed-restriction-item {
+      position: relative;
+    }
+
+    .deed-restriction-btn {
+      display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      width: 100%;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       color: var(--white);
-      padding: 20px 40px;
+      padding: 20px 30px;
+      border: none;
       border-radius: 12px;
       font-weight: 600;
       font-size: 16px;
-      text-decoration: none;
+      cursor: pointer;
       transition: var(--transition);
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow-medium);
       text-transform: uppercase;
       letter-spacing: 1px;
-      min-width: 280px;
     }
 
-    .download-btn::before {
+    .deed-restriction-btn::before {
       content: '';
       position: absolute;
       top: 0;
@@ -451,21 +463,148 @@
       transition: left 0.6s ease;
     }
 
-    .download-btn:hover::before {
+    .deed-restriction-btn:hover::before {
       left: 100%;
     }
 
-    .download-btn:hover {
+    .deed-restriction-btn:hover {
       background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      transform: translateY(-3px);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .deed-restriction-btn:focus {
+      outline: 3px solid var(--primary-light);
+      outline-offset: 4px;
+    }
+
+    .deed-restriction-btn i:first-child {
+      margin-right: 12px;
+      font-size: 18px;
+    }
+
+    .dropdown-arrow {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .deed-restriction-btn[aria-expanded="true"] .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .deed-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      box-shadow: var(--shadow-heavy);
+      z-index: 10;
+      margin-top: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+
+    .deed-dropdown[aria-hidden="false"] {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-content {
+      padding: 30px;
+    }
+
+    .dropdown-content h4 {
+      color: var(--text-dark);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .dropdown-content p {
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .dropdown-content ul {
+      margin: 15px 0 20px 20px;
+      padding: 0;
+    }
+
+    .dropdown-content li {
+      color: var(--text-light);
+      margin-bottom: 8px;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .dropdown-content li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+
+    .dropdown-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--secondary), #1e3a70);
+      color: var(--white);
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 10px;
+    }
+
+    .dropdown-download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .dropdown-download-btn:hover::before {
+      left: 100%;
+    }
+
+    .dropdown-download-btn:hover {
+      background: linear-gradient(135deg, #1e3a70, var(--secondary));
+      transform: translateY(-2px);
       box-shadow: var(--shadow-heavy);
       color: var(--white);
     }
 
-    .download-btn i {
-      margin-right: 12px;
-      font-size: 18px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    .dropdown-download-btn:focus {
+      outline: 3px solid var(--secondary);
+      outline-offset: 4px;
+    }
+
+    .dropdown-download-btn i {
+      margin-right: 8px;
+      font-size: 14px;
     }
 
     .plat-section {
@@ -792,6 +931,38 @@
         font-size: 1.8rem;
       }
       
+      .deed-restrictions-grid {
+        gap: 15px;
+      }
+      
+      .deed-restriction-btn {
+        padding: 18px 25px;
+        font-size: 15px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      
+      .deed-restriction-btn i:first-child {
+        margin-right: 0;
+        margin-bottom: 4px;
+      }
+      
+      .dropdown-content {
+        padding: 25px 20px;
+      }
+      
+      .dropdown-content h4 {
+        font-size: 1.3rem;
+      }
+      
+      .dropdown-download-btn {
+        padding: 14px 22px;
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+      }
+      
       .application-link {
         flex-direction: column;
         text-align: center;
@@ -807,12 +978,6 @@
       #application-types {
         padding: 30px 20px;
         margin: 20px;
-      }
-      
-      .download-btn {
-        padding: 18px 32px;
-        font-size: 15px;
-        min-width: 260px;
       }
       
       .apply-button {
@@ -845,6 +1010,24 @@
         font-size: 1.6rem;
       }
       
+      .deed-restriction-btn {
+        padding: 16px 20px;
+        font-size: 14px;
+      }
+      
+      .dropdown-content {
+        padding: 20px 15px;
+      }
+      
+      .dropdown-content h4 {
+        font-size: 1.2rem;
+      }
+      
+      .dropdown-download-btn {
+        padding: 13px 20px;
+        font-size: 12px;
+      }
+      
       #application-types {
         padding: 25px 15px;
         margin: 15px;
@@ -852,12 +1035,6 @@
       
       .selection-heading {
         font-size: 1.7rem;
-      }
-      
-      .download-btn {
-        padding: 16px 28px;
-        font-size: 14px;
-        min-width: 240px;
       }
       
       .apply-button {
@@ -886,7 +1063,8 @@
     }
 
     .apply-button:focus,
-    .download-btn:focus,
+    .deed-restriction-btn:focus,
+    .dropdown-download-btn:focus,
     .application-link:focus {
       outline: 3px solid var(--primary);
       outline-offset: 4px;
@@ -954,10 +1132,48 @@
         <div class="phase-grid">
           <div class="phase-content">
             <div class="document-download">
-              <a href="Florida Estates II Recorded Deed Restrictions.pdf" class="download-btn" download aria-describedby="download-description">
-                <i class="fas fa-file-pdf" aria-hidden="true"></i> Download Deed Restrictions PDF
-              </a>
-              <div id="download-description" class="sr-only">Download the complete deed restrictions document for Florida Estates Phase 2</div>
+              <div class="deed-restrictions-grid">
+                <div class="deed-restriction-item">
+                  <button class="deed-restriction-btn" id="single-family-btn" aria-expanded="false" aria-controls="single-family-dropdown">
+                    <i class="fas fa-home" aria-hidden="true"></i> Single Family Deed Restrictions
+                    <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                  </button>
+                  <div id="single-family-dropdown" class="deed-dropdown" aria-hidden="true">
+                    <div class="dropdown-content">
+                      <h4>Single Family Deed Restrictions</h4>
+                      <p>Applies to designated single-family residential lots within Florida Estates Phase 2:</p>
+                      <ul>
+                        <li>Block 1, Lots 24-28</li>
+                        <li>Block 4, Lots 1-19</li>
+                      </ul>
+                      <p>These restrictions ensure the development and maintenance of quality single-family homes that preserve property values and community standards.</p>
+                      <a href="Florida Estates Phase II Single Family (L23-28B1 & L1-19B4).pdf" class="dropdown-download-btn" download>
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Single Family PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deed-restriction-item">
+                  <button class="deed-restriction-btn" id="duplex-btn" aria-expanded="false" aria-controls="duplex-dropdown">
+                    <i class="fas fa-building" aria-hidden="true"></i> Residential Duplex Deed Restrictions
+                    <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                  </button>
+                  <div id="duplex-dropdown" class="deed-dropdown" aria-hidden="true">
+                    <div class="dropdown-content">
+                      <h4>Residential Duplex Deed Restrictions</h4>
+                      <p>Applies to designated duplex residential lots within Florida Estates Phase 2:</p>
+                      <ul>
+                        <li>Block 5, Lots 17-32</li>
+                      </ul>
+                      <p>These restrictions govern the development of quality duplex properties that maintain architectural harmony and enhance the community's residential character.</p>
+                      <a href="Florida Estates Phase II Residential Duplex (L17-32B5).pdf" class="dropdown-download-btn" download>
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Duplex PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1103,6 +1319,74 @@
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navbarLinks = document.querySelector('.navbar-links');
       const navbar = document.querySelector('.navbar');
+      const singleFamilyBtn = document.getElementById('single-family-btn');
+      const duplexBtn = document.getElementById('duplex-btn');
+      const singleFamilyDropdown = document.getElementById('single-family-dropdown');
+      const duplexDropdown = document.getElementById('duplex-dropdown');
+      
+      function toggleDropdown(btn, dropdown) {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        const otherBtn = btn === singleFamilyBtn ? duplexBtn : singleFamilyBtn;
+        const otherDropdown = btn === singleFamilyBtn ? duplexDropdown : singleFamilyDropdown;
+        
+        if (otherDropdown) {
+          otherDropdown.setAttribute('aria-hidden', 'true');
+          otherBtn.setAttribute('aria-expanded', 'false');
+        }
+        
+        if (isExpanded) {
+          dropdown.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          dropdown.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      }
+      
+      if (singleFamilyBtn && singleFamilyDropdown) {
+        singleFamilyBtn.addEventListener('click', function() {
+          toggleDropdown(singleFamilyBtn, singleFamilyDropdown);
+        });
+      }
+      
+      if (duplexBtn && duplexDropdown) {
+        duplexBtn.addEventListener('click', function() {
+          toggleDropdown(duplexBtn, duplexDropdown);
+        });
+      }
+      
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.deed-restriction-item')) {
+          if (singleFamilyDropdown) {
+            singleFamilyDropdown.setAttribute('aria-hidden', 'true');
+            singleFamilyBtn.setAttribute('aria-expanded', 'false');
+          }
+          if (duplexDropdown) {
+            duplexDropdown.setAttribute('aria-hidden', 'true');
+            duplexBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      
+      function handleKeydown(event, btn, dropdown) {
+        if (event.key === 'Escape') {
+          dropdown.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.focus();
+        }
+      }
+      
+      if (singleFamilyBtn && singleFamilyDropdown) {
+        singleFamilyDropdown.addEventListener('keydown', function(event) {
+          handleKeydown(event, singleFamilyBtn, singleFamilyDropdown);
+        });
+      }
+      
+      if (duplexBtn && duplexDropdown) {
+        duplexDropdown.addEventListener('keydown', function(event) {
+          handleKeydown(event, duplexBtn, duplexDropdown);
+        });
+      }
       
       if (applyNowBtn && applicationTypes) {
         applyNowBtn.addEventListener('click', function() {
