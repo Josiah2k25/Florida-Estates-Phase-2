@@ -1,0 +1,1455 @@
+---
+title: Florida-Estates-2
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Florida Estates Phase 2 - Premium residential lots in an exclusive development by Rio Tierra Real Estate. Explore available lots and start your application today.">
+  <meta name="keywords" content="Florida Estates Phase 2, residential lots, real estate development, Rio Tierra, premium homesites">
+  <meta name="author" content="Rio Tierra Real Estate">
+  <meta property="og:title" content="Rio Tierra | Florida Estates Phase 2">
+  <meta property="og:description" content="Discover premium residential lots in Florida Estates Phase 2. Explore our interactive plat and apply for your perfect homesite today.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/Rio Tierra Logo.webp">
+  <title>Rio Tierra | Florida Estates Phase 2</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="/footer.css">
+  <style>
+    :root {
+      --primary: #c1743c;
+      --primary-dark: #a85e2d;
+      --primary-light: #d4925a;
+      --secondary: #2d4a8a;
+      --text-dark: #2c3e50;
+      --text-light: #7f8c8d;
+      --bg-light: #f8f9fa;
+      --white: #ffffff;
+      --teal: #1C4F59;
+      --teal-light: #2a6d7c;
+      --teal-dark: #17444d;
+      --bronze: #B3652A;
+      --bronze-light: #c57b45;
+      --bronze-dark: #A55A29;
+      --background: #F9F5F0;
+      --gray: #f8f8f8;
+      --gray-light: #fafafa;
+      --gray-dark: #e8e8e8;
+      --gray-darker: #d4d4d4;
+      --black: #0a0a0a;
+      --charcoal: #2c2c2c;
+      --smoke: #f5f5f5;
+      --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+      --shadow-premium: 0 20px 60px rgba(0, 0, 0, 0.15);
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      --header-height: 85px;
+      --container-max: 1400px;
+      --border-radius: 12px;
+      --border-radius-lg: 20px;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 600;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--bronze);
+      transition: var(--transition-fast);
+    }
+
+    a:hover {
+      color: var(--bronze-dark);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(249, 245, 240, 0.9);
+      backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-medium);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 1000;
+      transition: var(--transition-smooth);
+      height: var(--header-height);
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 0 2rem;
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .navbar-logo {
+      height: 55px;
+      width: auto;
+      transition: var(--transition-smooth);
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .navbar-links a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
+      padding: 1rem 0;
+      transition: var(--transition-fast);
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-links a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--bronze), var(--bronze-light));
+      transition: var(--transition-smooth);
+      transform: translateX(-50%);
+    }
+
+    .navbar-links a:hover::before, .navbar-links a.active::before {
+      width: 100%;
+    }
+
+    .navbar-links a:hover, .navbar-links a.active {
+      color: var(--bronze);
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-cta {
+      background: var(--bronze);
+      color: var(--white);
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: var(--transition-fast);
+      border: none;
+      box-shadow: none;
+    }
+
+    .navbar-cta:hover {
+      background: var(--bronze-dark);
+      transform: translateY(-1px);
+      color: var(--white);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .mobile-menu-btn span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-dark);
+      left: 0;
+      transition: var(--transition-smooth);
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn span:nth-child(1) { top: 0; }
+    .mobile-menu-btn span:nth-child(2) { top: 10px; }
+    .mobile-menu-btn span:nth-child(3) { top: 20px; }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 10px;
+    }
+
+    .phase-hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.95), rgba(52, 73, 94, 0.85)),
+                  url('/Florida Estates 2 Background.webp');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      padding: 180px 0 120px;
+      text-align: center;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .phase-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(193, 116, 60, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(193, 116, 60, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.01) 50%, transparent 100%);
+      z-index: 1;
+    }
+
+    .phase-hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .phase-hero-content .subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      position: relative;
+      display: inline-block;
+    }
+
+    .phase-hero-content .subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .phase-hero-content h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin-bottom: 24px;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -2px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      line-height: 1.1;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phase-details-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+      position: relative;
+    }
+
+    .phase-details-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--secondary));
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--text-dark), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border-radius: 2px;
+    }
+
+    .section-description {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text-light);
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      margin-top: 40px;
+    }
+
+    .phase-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .document-download {
+      width: 100%;
+      margin: 40px 0;
+    }
+
+    .deed-restrictions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .deed-restriction-item {
+      position: relative;
+    }
+
+    .deed-restriction-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 20px 30px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .deed-restriction-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .deed-restriction-btn:hover::before {
+      left: 100%;
+    }
+
+    .deed-restriction-btn:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-heavy);
+    }
+
+    .deed-restriction-btn:focus {
+      outline: 3px solid var(--primary-light);
+      outline-offset: 4px;
+    }
+
+    .deed-restriction-btn i:first-child {
+      margin-right: 12px;
+      font-size: 18px;
+    }
+
+    .dropdown-arrow {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .deed-restriction-btn[aria-expanded="true"] .dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .deed-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border: 2px solid var(--primary);
+      border-radius: 12px;
+      box-shadow: var(--shadow-heavy);
+      z-index: 10;
+      margin-top: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+    }
+
+    .deed-dropdown[aria-hidden="false"] {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-content {
+      padding: 30px;
+    }
+
+    .dropdown-content h4 {
+      color: var(--text-dark);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+
+    .dropdown-content p {
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .dropdown-content ul {
+      margin: 15px 0 20px 20px;
+      padding: 0;
+    }
+
+    .dropdown-content li {
+      color: var(--text-light);
+      margin-bottom: 8px;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .dropdown-content li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: -15px;
+    }
+
+    .dropdown-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--secondary), #1e3a70);
+      color: var(--white);
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 10px;
+    }
+
+    .dropdown-download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .dropdown-download-btn:hover::before {
+      left: 100%;
+    }
+
+    .dropdown-download-btn:hover {
+      background: linear-gradient(135deg, #1e3a70, var(--secondary));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-heavy);
+      color: var(--white);
+    }
+
+    .dropdown-download-btn:focus {
+      outline: 3px solid var(--secondary);
+      outline-offset: 4px;
+    }
+
+    .dropdown-download-btn i {
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .plat-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f1f3f4 0%, #e8eaf1 100%);
+      position: relative;
+    }
+
+    .plat-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+
+    .plat-container {
+      margin-top: 50px;
+    }
+
+    .plat-placeholder {
+      background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+      border: 2px solid rgba(193, 116, 60, 0.2);
+      border-radius: 16px;
+      padding: 80px 40px;
+      text-align: center;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .plat-placeholder::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 30% 70%, rgba(193, 116, 60, 0.03), transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(45, 74, 138, 0.03), transparent 50%);
+      z-index: 1;
+    }
+
+    .plat-placeholder:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-heavy);
+      border-color: rgba(193, 116, 60, 0.4);
+    }
+
+    .placeholder-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .placeholder-content i {
+      font-size: 5rem;
+      color: var(--secondary);
+      margin-bottom: 30px;
+      filter: drop-shadow(0 4px 20px rgba(45, 74, 138, 0.2));
+    }
+
+    .placeholder-content h3 {
+      font-size: 2.2rem;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .placeholder-content p {
+      color: var(--text-light);
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+
+    .application-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--bg-light) 0%, #f0f2f5 100%);
+      position: relative;
+    }
+
+    .application-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+    }
+
+    .apply-button-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .apply-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--secondary), #1e3a70);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 18px 36px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: var(--transition);
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .apply-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .apply-button:hover::before {
+      left: 100%;
+    }
+
+    .apply-button:hover {
+      background: linear-gradient(135deg, #1e3a70, var(--secondary));
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-heavy);
+      color: var(--white);
+    }
+
+    .apply-button i {
+      margin-left: 8px;
+      font-size: 14px;
+    }
+
+    #application-types {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+      border-radius: 16px;
+      box-shadow: var(--shadow-heavy);
+      margin-top: 40px;
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .selection-heading {
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: center;
+    }
+
+    .selection-description {
+      color: var(--text-light);
+      margin-bottom: 35px;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .application-links {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .application-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      padding: 24px;
+      border: 2px solid rgba(193, 116, 60, 0.1);
+      border-radius: 12px;
+      transition: var(--transition);
+      background: linear-gradient(135deg, var(--white) 0%, #fafafa 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .application-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary), var(--primary-light));
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+      transform-origin: bottom;
+    }
+
+    .application-link:hover::before {
+      transform: scaleY(1);
+    }
+
+    .application-link:hover {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, #fafafa 0%, var(--white) 100%);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .application-icon {
+      font-size: 24px;
+      color: var(--primary);
+      margin-right: 20px;
+      min-width: 32px;
+      text-align: center;
+      filter: drop-shadow(0 2px 8px rgba(193, 116, 60, 0.2));
+    }
+
+    .application-text {
+      flex: 1;
+    }
+
+    .application-text h4 {
+      margin: 0 0 8px;
+      color: var(--text-dark);
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .application-text p {
+      margin: 0;
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1200px) {
+      .phase-hero {
+        padding: 160px 0 100px;
+      }
+      
+      .plat-placeholder {
+        padding: 60px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-cta {
+        display: none;
+      }
+      
+      .navbar-links {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        width: 85%;
+        height: calc(100vh - var(--header-height));
+        padding: 3rem 2rem;
+        gap: 2rem;
+        transition: var(--transition-smooth);
+        box-shadow: var(--shadow-premium);
+        z-index: 100;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar-links.active {
+        right: 0;
+      }
+      
+      .navbar-links a {
+        color: var(--text-dark);
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 1rem 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .phase-hero {
+        padding: 150px 0 100px;
+        background-attachment: scroll;
+      }
+      
+      .phase-details-section,
+      .plat-section,
+      .application-section {
+        padding: 80px 0;
+      }
+      
+      .plat-placeholder {
+        padding: 40px 20px;
+        min-height: 400px;
+      }
+      
+      .placeholder-content i {
+        font-size: 4rem;
+      }
+      
+      .placeholder-content h3 {
+        font-size: 1.8rem;
+      }
+      
+      .deed-restrictions-grid {
+        gap: 15px;
+      }
+      
+      .deed-restriction-btn {
+        padding: 18px 25px;
+        font-size: 15px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+      
+      .deed-restriction-btn i:first-child {
+        margin-right: 0;
+        margin-bottom: 4px;
+      }
+      
+      .dropdown-content {
+        padding: 25px 20px;
+      }
+      
+      .dropdown-content h4 {
+        font-size: 1.3rem;
+      }
+      
+      .dropdown-download-btn {
+        padding: 14px 22px;
+        font-size: 13px;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .application-link {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      
+      .application-icon {
+        margin-right: 0;
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+      
+      #application-types {
+        padding: 30px 20px;
+        margin: 20px;
+      }
+      
+      .apply-button {
+        padding: 16px 32px;
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .phase-hero {
+        padding: 130px 0 80px;
+      }
+      
+      .phase-details-section,
+      .plat-section,
+      .application-section {
+        padding: 60px 0;
+      }
+      
+      .plat-placeholder {
+        padding: 30px 15px;
+        min-height: 350px;
+      }
+      
+      .placeholder-content i {
+        font-size: 3.5rem;
+      }
+      
+      .placeholder-content h3 {
+        font-size: 1.6rem;
+      }
+      
+      .deed-restriction-btn {
+        padding: 16px 20px;
+        font-size: 14px;
+      }
+      
+      .dropdown-content {
+        padding: 20px 15px;
+      }
+      
+      .dropdown-content h4 {
+        font-size: 1.2rem;
+      }
+      
+      .dropdown-download-btn {
+        padding: 13px 20px;
+        font-size: 12px;
+      }
+      
+      #application-types {
+        padding: 25px 15px;
+        margin: 15px;
+      }
+      
+      .selection-heading {
+        font-size: 1.7rem;
+      }
+      
+      .apply-button {
+        padding: 15px 28px;
+        font-size: 14px;
+      }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .phase-details-section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .plat-section {
+      animation: slideInUp 0.8s ease-out;
+    }
+
+    .apply-button:focus,
+    .deed-restriction-btn:focus,
+    .dropdown-download-btn:focus,
+    .application-link:focus {
+      outline: 3px solid var(--primary);
+      outline-offset: 4px;
+    }
+
+    @media (prefers-contrast: high) {
+      :root {
+        --primary: #b8621f;
+        --text-dark: #000000;
+        --text-light: #404040;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .phase-hero {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" role="menuitem">Home</a>
+        <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" class="navbar-logo" width="65" height="65">
+      </a>
+      <div class="navbar-links">
+         <li><a href="/">Home</a></li>
+        <a href="sales.html" class="active" aria-current="page">Sales</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="navbar-right">
+        <a href="#contact" class="navbar-cta">Get In Touch</a>
+        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="phase-hero" role="banner">
+      <div class="container">
+        <div class="phase-hero-content">
+          <div class="subtitle">Florida Estates</div>
+          <h1>Phase 2</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="phase-details-section" id="phase-details" aria-labelledby="phase-details-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="phase-details-heading">Florida Estates Phase 2</h2>
+        </div>
+
+        <div class="phase-grid">
+          <div class="phase-content">
+            <div class="document-download">
+              <div class="deed-restrictions-grid">
+                <div class="deed-restriction-item">
+                  <button class="deed-restriction-btn" id="single-family-btn" aria-expanded="false" aria-controls="single-family-dropdown">
+                    <i class="fas fa-home" aria-hidden="true"></i> Single Family Deed Restrictions
+                    <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                  </button>
+                  <div id="single-family-dropdown" class="deed-dropdown" aria-hidden="true">
+                    <div class="dropdown-content">
+                      <h4>Single Family Deed Restrictions</h4>
+                      <p>Applies to designated single-family residential lots within Florida Estates Phase 2:</p>
+                      <ul>
+                        <li>Block 1, Lots 24-28</li>
+                        <li>Block 4, Lots 1-19</li>
+                      </ul>
+                      
+                      <a href="Florida Estates Phase II Single Family (L23-28B1 & L1-19B4).pdf" class="dropdown-download-btn" download>
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Single Family PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="deed-restriction-item">
+                  <button class="deed-restriction-btn" id="duplex-btn" aria-expanded="false" aria-controls="duplex-dropdown">
+                    <i class="fas fa-building" aria-hidden="true"></i> Residential Duplex Deed Restrictions
+                    <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+                  </button>
+                  <div id="duplex-dropdown" class="deed-dropdown" aria-hidden="true">
+                    <div class="dropdown-content">
+                      <h4>Residential Duplex Deed Restrictions</h4>
+                      <p>Applies to designated duplex residential lots within Florida Estates Phase 2:</p>
+                      <ul>
+                        <li>Block 5, Lots 17-32</li>
+                      </ul>
+
+                      <a href="Florida Estates Phase II Residential Duplex (L17-32B5).pdf" class="dropdown-download-btn" download>
+                        <i class="fas fa-download" aria-hidden="true"></i> Download Duplex PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plat-section" id="interactive-plat" aria-labelledby="plat-section-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="plat-section-heading">Interactive Plat</h2>
+          <p class="section-description">Explore available lots and find your perfect homesite in Florida Estates Phase 2.</p>
+        </div>
+        
+        <div class="plat-container">
+          <div class="plat-placeholder" role="img" aria-label="Interactive plat coming soon placeholder">
+            <div class="placeholder-content">
+              <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+              <h3>Interactive Plat Coming Soon</h3>
+              <p>Our interactive plat will allow you to explore available lots, view details, and select your perfect homesite.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="application-section" id="applications" aria-labelledby="application-section-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="application-section-heading">Florida Estates Phase 2 Applications</h2>
+          <p class="section-description">Ready to secure your lot in Florida Estates Phase 2? Start your application process below.</p>
+        </div>
+        
+        <div class="apply-button-container">
+          <button id="apply-now-btn" class="apply-button" aria-expanded="false" aria-controls="application-types">
+            APPLY NOW <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        
+        <div id="application-types" aria-hidden="true">
+          <h3 class="selection-heading">Select Application Type</h3>
+          <p class="selection-description">Please select the type of application you'd like to complete:</p>
+          
+          <div class="application-links">
+            <a href="/builder-application/" class="application-link" aria-describedby="builder-app-desc">
+              <span class="application-icon"><i class="fas fa-hard-hat" aria-hidden="true"></i></span>
+              <div class="application-text">
+                <h4>Builder Application</h4>
+                <p id="builder-app-desc">For qualified builders interested in constructing homes in Florida Estates Phase 2.</p>
+              </div>
+            </a>
+            
+            <a href="/individual-application/" class="application-link" aria-describedby="individual-app-desc">
+              <span class="application-icon"><i class="fas fa-home" aria-hidden="true"></i></span>
+              <div class="application-text">
+                <h4>Individual Application</h4>
+                <p id="individual-app-desc">For individuals looking to purchase a lot or custom build in Florida Estates Phase 2.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="65" height="65">
+            </div>
+            <p class="footer-desc">Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design. Our vision is to build developments that enhance lives and create lasting value.</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="footer-links-container">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+               <li><a href="/">Home</a></li>
+              <li><a href="sales.html">Sales</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-container">
+            <h4 class="footer-title">Our Communities</h4>
+            <ul class="footer-links">
+              <li><a href="LEP1.html">Lunar Estates - Phase 1</a></li>
+              <li><a href="LEP2.html">Lunar Estates - Phase 2</a></li>
+              <li><a href="FEP2.html">Florida Estates - Phase 2</a></li>
+              <li><a href="FEP3.html">Florida Estates - Phase 3</a></li>
+              <li><a href="PGP3S1.html">Palmetto Grove - P3S1</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4 class="footer-title">Contact Info</h4>
+            <div class="contact-info">
+              <i class="fas fa-map-marker-alt contact-icon" aria-hidden="true"></i>
+              <p>123 Development Way, Edinburg, TX 78539</p>
+            </div>
+            <div class="contact-info">
+              <i class="fas fa-phone-alt contact-icon" aria-hidden="true"></i>
+              <p>+1 (956) 555-1234</p>
+            </div>
+            <div class="contact-info">
+              <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+              <p>info@riotierra.com</p>
+            </div>
+            <div class="contact-info">
+              <i class="fas fa-clock contact-icon" aria-hidden="true"></i>
+              <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <p class="copyright">&copy; 2025 Rio Tierra Real Estate. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const applyNowBtn = document.getElementById('apply-now-btn');
+      const applicationTypes = document.getElementById('application-types');
+      const backToTopBtn = document.getElementById('back-to-top');
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navbarLinks = document.querySelector('.navbar-links');
+      const navbar = document.querySelector('.navbar');
+      const singleFamilyBtn = document.getElementById('single-family-btn');
+      const duplexBtn = document.getElementById('duplex-btn');
+      const singleFamilyDropdown = document.getElementById('single-family-dropdown');
+      const duplexDropdown = document.getElementById('duplex-dropdown');
+      
+      function toggleDropdown(btn, dropdown) {
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        const otherBtn = btn === singleFamilyBtn ? duplexBtn : singleFamilyBtn;
+        const otherDropdown = btn === singleFamilyBtn ? duplexDropdown : singleFamilyDropdown;
+        
+        if (otherDropdown) {
+          otherDropdown.setAttribute('aria-hidden', 'true');
+          otherBtn.setAttribute('aria-expanded', 'false');
+        }
+        
+        if (isExpanded) {
+          dropdown.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          dropdown.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      }
+      
+      if (singleFamilyBtn && singleFamilyDropdown) {
+        singleFamilyBtn.addEventListener('click', function() {
+          toggleDropdown(singleFamilyBtn, singleFamilyDropdown);
+        });
+      }
+      
+      if (duplexBtn && duplexDropdown) {
+        duplexBtn.addEventListener('click', function() {
+          toggleDropdown(duplexBtn, duplexDropdown);
+        });
+      }
+      
+      document.addEventListener('click', function(event) {
+        if (!event.target.closest('.deed-restriction-item')) {
+          if (singleFamilyDropdown) {
+            singleFamilyDropdown.setAttribute('aria-hidden', 'true');
+            singleFamilyBtn.setAttribute('aria-expanded', 'false');
+          }
+          if (duplexDropdown) {
+            duplexDropdown.setAttribute('aria-hidden', 'true');
+            duplexBtn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      
+      function handleKeydown(event, btn, dropdown) {
+        if (event.key === 'Escape') {
+          dropdown.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
+          btn.focus();
+        }
+      }
+      
+      if (singleFamilyBtn && singleFamilyDropdown) {
+        singleFamilyDropdown.addEventListener('keydown', function(event) {
+          handleKeydown(event, singleFamilyBtn, singleFamilyDropdown);
+        });
+      }
+      
+      if (duplexBtn && duplexDropdown) {
+        duplexDropdown.addEventListener('keydown', function(event) {
+          handleKeydown(event, duplexBtn, duplexDropdown);
+        });
+      }
+      
+      if (applyNowBtn && applicationTypes) {
+        applyNowBtn.addEventListener('click', function() {
+          const isExpanded = applyNowBtn.getAttribute('aria-expanded') === 'true';
+          
+          if (isExpanded) {
+            applicationTypes.style.display = 'none';
+            applicationTypes.setAttribute('aria-hidden', 'true');
+            applyNowBtn.setAttribute('aria-expanded', 'false');
+          } else {
+            applicationTypes.style.display = 'block';
+            applicationTypes.setAttribute('aria-hidden', 'false');
+            applyNowBtn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      }
+      
+      if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('active');
+          } else {
+            backToTopBtn.classList.remove('active');
+          }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      if (mobileMenuBtn && navbarLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          
+          mobileMenuBtn.classList.toggle('active');
+          navbarLinks.classList.toggle('active');
+          
+          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+        });
+      }
+      
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        }
+        
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
