@@ -611,7 +611,9 @@ title: Individual Application - Florida Estates Phase 2
       padding: 30px;
       border-radius: 5px;
       width: 90%;
-      max-width: 450px;
+      max-width: 600px;
+      max-height: 80vh;
+      overflow-y: auto;
     }
 
     .modal-header {
@@ -660,6 +662,7 @@ title: Individual Application - Florida Estates Phase 2
 
     .tab-content {
       display: none;
+      min-height: 220px;
     }
 
     .tab-content.active {
@@ -677,9 +680,14 @@ title: Individual Application - Florida Estates Phase 2
     }
 
     .canvas-container {
-      border: 1px solid #ccc;
+      border: 2px solid #ccc;
       margin: 0 auto;
       display: block;
+      background: white;
+      cursor: crosshair;
+      width: 100%;
+      height: 180px;
+      border-radius: 4px;
     }
 
     .form-footer {
@@ -757,6 +765,57 @@ title: Individual Application - Florida Estates Phase 2
       .form-header h1 {
         font-size: 2.25rem;
       }
+
+      /* SIMPLE SCALING SOLUTION */
+      .page-container {
+        transform: scale(0.7);
+        transform-origin: top left;
+        width: 142.86%; /* 100% / 0.7 to compensate for scale */
+        margin-bottom: -30%;
+      }
+
+      .control-panel {
+        padding: 15px;
+        margin-top: 15px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        margin: 5px;
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 20px;
+        padding: 20px;
+        max-height: 90vh;
+      }
+
+      .modal-title {
+        font-size: 16pt;
+      }
+
+      .tab-content {
+        min-height: 200px;
+      }
+
+      .type-input {
+        font-size: 18pt;
+        padding: 12px;
+      }
+
+      .canvas-container {
+        width: 100%;
+        height: 150px;
+        border: 2px solid #333;
+        background: #f9f9f9;
+      }
+
+      .tab-btn {
+        padding: 12px;
+        font-size: 14px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -783,6 +842,51 @@ title: Individual Application - Florida Estates Phase 2
       
       .form-header h1 {
         font-size: 2rem;
+      }
+
+      /* SMALLER SCALE FOR TINY SCREENS */
+      .page-container {
+        transform: scale(0.5);
+        transform-origin: top left;
+        width: 200%; /* 100% / 0.5 to compensate for scale */
+        margin-bottom: -50%;
+      }
+
+      .btn {
+        padding: 15px;
+        font-size: 16px;
+        margin: 8px 0;
+      }
+
+      .modal-content {
+        width: 98%;
+        margin: 10px;
+        padding: 15px;
+        max-height: 90vh;
+      }
+
+      .modal-title {
+        font-size: 14pt;
+      }
+
+      .tab-content {
+        min-height: 180px;
+      }
+
+      .type-input {
+        font-size: 16pt;
+        padding: 10px;
+      }
+
+      .canvas-container {
+        width: 100%;
+        height: 130px;
+        border: 2px solid #333;
+      }
+
+      .tab-btn {
+        padding: 10px;
+        font-size: 12px;
       }
     }
 
@@ -1106,6 +1210,14 @@ title: Individual Application - Florida Estates Phase 2
       </div>
     </section>
   </main>
+
+          <footer class="form-footer">
+            <p>Need assistance? <a href="#contact">Contact our team</a> for help with your application.</p>
+          </footer>
+        </div>
+      </div>
+    </section>
+  </main>
   <footer class="footer">
     <div class="footer-top">
       <div class="container">
@@ -1236,14 +1348,21 @@ title: Individual Application - Florida Estates Phase 2
     document.getElementById('buyerDate').textContent = dateStr;
     document.getElementById('cobuyerDate').textContent = dateStr;
 
-    // FIXED: Canvas initialization
+    // FIXED: Canvas initialization with proper mobile support - WIDER for signatures
     function initializeCanvas() {
       if (signatureCanvas) {
-        signatureCanvas.width = signatureCanvas.offsetWidth;
-        signatureCanvas.height = signatureCanvas.offsetHeight;
+        // Set explicit canvas dimensions - MUCH WIDER for horizontal signatures
+        const containerWidth = signatureCanvas.parentElement.offsetWidth;
+        const canvasWidth = Math.max(500, containerWidth - 20); // Much wider, minimum 500px
+        const canvasHeight = 180; // Reasonable height for signatures
+        
+        signatureCanvas.width = canvasWidth;
+        signatureCanvas.height = canvasHeight;
+        signatureCanvas.style.width = '100%'; // Fill container width
+        signatureCanvas.style.height = canvasHeight + 'px';
         
         ctx = signatureCanvas.getContext('2d');
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 3; // Slightly thicker line for better visibility
         ctx.lineCap = 'round';
         ctx.strokeStyle = '#000080';
         
@@ -1251,6 +1370,8 @@ title: Individual Application - Florida Estates Phase 2
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
         ctx.fillStyle = '#000080';
+        
+        console.log(`Canvas initialized: ${canvasWidth}x${canvasHeight}`);
       }
     }
 
@@ -1307,12 +1428,13 @@ title: Individual Application - Florida Estates Phase 2
       signatureCanvas.dispatchEvent(mouseEvent);
     }
 
-    // Modal functions
+    // Modal functions with better mobile support
     function openModal(target) {
       currentSigTarget = target;
       modal.classList.add('active');
       signatureTypeInput.value = '';
       
+      // Wait for modal to render, then initialize canvas
       setTimeout(() => {
         initializeCanvas();
         setupCanvasDrawing();
@@ -1322,7 +1444,7 @@ title: Individual Application - Florida Estates Phase 2
           ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
           ctx.fillStyle = '#000080';
         }
-      }, 100);
+      }, 200); // Longer delay for mobile
     }
 
     function closeModalFn() {
@@ -1350,10 +1472,11 @@ title: Individual Application - Florida Estates Phase 2
       drawContent.classList.add('active');
       typeContent.classList.remove('active');
       
+      // Longer delay for mobile to ensure proper rendering
       setTimeout(() => {
         initializeCanvas();
         setupCanvasDrawing();
-      }, 50);
+      }, 150);
     });
 
     // Clear and save signature
@@ -1508,7 +1631,7 @@ title: Individual Application - Florida Estates Phase 2
       statusMsg.className = `status-msg ${type} show`;
     }
 
-    // PDF generation with optimized settings
+    // PDF generation with optimized settings for better text quality
     async function generatePDF() {
       try {
         const controlPanel = document.querySelector('.control-panel');
@@ -1523,20 +1646,32 @@ title: Individual Application - Florida Estates Phase 2
           await new Promise(resolve => setTimeout(resolve, 1000));
         }
         
-        // OPTIMIZED: Reduced scale and quality for smaller file size
+        // FIXED: Better settings for text quality
+        const element = document.getElementById('documentPage');
+        
+        // Get the actual dimensions
+        const rect = element.getBoundingClientRect();
+        const actualWidth = rect.width;
+        const actualHeight = rect.height;
+        
         const options = {
-          scale: 1.5, // Reduced from 2
+          scale: 2, // Higher scale for better text quality
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
           logging: false,
           letterRendering: true,
-          windowWidth: 816,
-          windowHeight: 1056,
-          quality: 0.8 // Added quality setting
+          width: actualWidth, // Use actual dimensions
+          height: actualHeight,
+          onclone: function(clonedDoc) {
+            // Ensure fonts are loaded in the cloned document
+            const clonedElement = clonedDoc.getElementById('documentPage');
+            if (clonedElement) {
+              clonedElement.style.fontFamily = '"Times New Roman", Times, serif';
+            }
+          }
         };
         
-        const element = document.getElementById('documentPage');
         const canvas = await html2canvas(element, options);
         
         controlPanel.style.display = 'block';
@@ -1544,16 +1679,39 @@ title: Individual Application - Florida Estates Phase 2
         formFooter.style.display = 'block';
         
         const { jsPDF } = window.jspdf;
+        
+        // Calculate proper dimensions to maintain aspect ratio
+        const imgWidth = canvas.width;
+        const imgHeight = canvas.height;
+        const ratio = imgHeight / imgWidth;
+        
+        // Standard letter size: 8.5" x 11"
+        const pdfWidth = 8.5;
+        const pdfHeight = 11;
+        
+        // Calculate scaled dimensions to fit within page while maintaining ratio
+        let scaledWidth = pdfWidth;
+        let scaledHeight = pdfWidth * ratio;
+        
+        if (scaledHeight > pdfHeight) {
+          scaledHeight = pdfHeight;
+          scaledWidth = pdfHeight / ratio;
+        }
+        
+        // Center the content on the page
+        const offsetX = (pdfWidth - scaledWidth) / 2;
+        const offsetY = (pdfHeight - scaledHeight) / 2;
+        
         const pdf = new jsPDF({
           orientation: 'portrait',
           unit: 'in',
           format: 'letter',
-          compress: true // Added compression
+          compress: true
         });
         
-        // OPTIMIZED: Compress image before adding to PDF
-        const imgData = canvas.toDataURL('image/jpeg', 0.8); // Use JPEG with 80% quality
-        pdf.addImage(imgData, 'JPEG', 0, 0, 8.5, 11);
+        // FIXED: Use PNG for better text quality and proper scaling
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', offsetX, offsetY, scaledWidth, scaledHeight);
         
         return pdf;
         
