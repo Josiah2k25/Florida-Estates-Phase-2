@@ -13,15 +13,19 @@ title: Individual Application - Florida Estates Phase 2
   <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/Rio Tierra Logo.webp">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#c1743c">
   <title>Rio Tierra | Individual Application Form</title>
   
   <link rel="preload" href="/Rio Tierra Logo.webp" as="image">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="/footer.css">
   
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   
   <style>
     :root {
@@ -141,6 +145,11 @@ title: Individual Application - Florida Estates Phase 2
       position: relative;
       padding: 12px 0;
       letter-spacing: 0.01em;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .navbar-links a:hover {
@@ -184,6 +193,11 @@ title: Individual Application - Florida Estates Phase 2
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       letter-spacing: 0.01em;
+      min-height: 44px;
+      min-width: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .navbar-cta:hover {
@@ -206,6 +220,8 @@ title: Individual Application - Florida Estates Phase 2
       padding: 8px;
       border-radius: 8px;
       transition: all 0.25s ease;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .mobile-menu-btn:hover {
@@ -331,10 +347,13 @@ title: Individual Application - Florida Estates Phase 2
       outline: none;
       display: inline-block;
       vertical-align: baseline;
+      min-height: 44px;
     }
 
     .field-input:focus {
       background: rgba(255, 255, 240, 0.5);
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .field-xs { width: 0.5in; }
@@ -449,17 +468,24 @@ title: Individual Application - Florida Estates Phase 2
       position: relative;
       cursor: pointer;
       vertical-align: bottom;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .signature-box:hover {
       background: rgba(240, 240, 255, 0.3);
     }
 
+    .signature-box:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
     .signature-placeholder {
       position: absolute;
       bottom: 0.05in;
       left: 0.1in;
-      color: #888;
+      color: #666;
       font-size: 9pt;
       font-style: italic;
     }
@@ -511,10 +537,17 @@ title: Individual Application - Florida Estates Phase 2
       margin: 0 5px;
       font-family: Arial, sans-serif;
       border-radius: 6px;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .btn:hover:not(:disabled) {
       background: #555;
+    }
+
+    .btn:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .btn:disabled {
@@ -635,10 +668,17 @@ title: Individual Application - Florida Estates Phase 2
       cursor: pointer;
       padding: 0;
       color: #666;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .close-btn:hover {
       color: #000;
+    }
+
+    .close-btn:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .tab-buttons {
@@ -653,11 +693,18 @@ title: Individual Application - Florida Estates Phase 2
       border: 1px solid #ccc;
       background: white;
       cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .tab-btn.active {
       background: #333;
       color: white;
+    }
+
+    .tab-btn:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .tab-content {
@@ -677,6 +724,12 @@ title: Individual Application - Florida Estates Phase 2
       text-align: center;
       font-family: 'Brush Script MT', cursive;
       color: #000080;
+      min-height: 44px;
+    }
+
+    .type-input:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .canvas-container {
@@ -688,6 +741,11 @@ title: Individual Application - Florida Estates Phase 2
       width: 100%;
       height: 180px;
       border-radius: 4px;
+    }
+
+    .canvas-container:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     .form-footer {
@@ -707,10 +765,20 @@ title: Individual Application - Florida Estates Phase 2
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .form-footer a:hover {
       text-decoration: underline;
+    }
+
+    .form-footer a:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
 
     @media (max-width: 768px) {
@@ -958,7 +1026,9 @@ title: Individual Application - Florida Estates Phase 2
              alt="Rio Tierra Logo" 
              class="navbar-logo" 
              width="65" 
-             height="65">
+             height="65"
+             loading="eager"
+             decoding="async">
       </a>
       <div class="navbar-links" role="menubar">
         <a href="/" role="menuitem">Home</a>
@@ -983,16 +1053,16 @@ title: Individual Application - Florida Estates Phase 2
           <header class="form-header">
             <h1 id="form-heading">Individual Application Form</h1>
           </header>
-          <div class="loading-overlay" id="loadingOverlay">
-        <div class="spinner"></div>
+          <div class="loading-overlay" id="loadingOverlay" aria-label="Loading">
+        <div class="spinner" aria-label="Loading spinner"></div>
     </div>
 
     <div class="page-container" id="documentPage">
-        <div class="form-number">Form 2024-OFFER-001</div>
+        <div class="form-number"></div>
         
-        <div class="header-section">
-            <h1 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h1>
-        </div>
+        <header class="header-section">
+            <h2 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h2>
+        </header>
 
         <form id="purchaseForm" novalidate>
             <div class="info-line">
@@ -1001,17 +1071,17 @@ title: Individual Application - Florida Estates Phase 2
             </div>
 
             <div class="info-line">
-                <span class="label">Lot#</span>
-                <input type="text" class="field-input field-xs" id="lot" name="lot" required>
+                <label for="lot" class="label">Lot#</label>
+                <input type="text" class="field-input field-xs" id="lot" name="lot" required aria-describedby="lot-error">
                 
-                <span class="label" style="margin-left: 0.3in;">Block#</span>
-                <input type="text" class="field-input field-xs" id="block" name="block" required>
+                <label for="block" class="label" style="margin-left: 0.3in;">Block#</label>
+                <input type="text" class="field-input field-xs" id="block" name="block" required aria-describedby="block-error">
                 
                 <span class="label" style="margin-left: 0.3in;">Subdivision:</span>
                 <span>Florida Estates Subdivision Section II, Cameron County, TX</span>
             </div>
 
-            <table class="buyer-table">
+            <table class="buyer-table" role="table" aria-label="Buyer and Co-Buyer Information">
                 <tr>
                     <td class="section-header divider" colspan="2">Buyer</td>
                     <td class="section-header" colspan="2">Co-Buyer</td>
@@ -1019,83 +1089,83 @@ title: Individual Application - Florida Estates Phase 2
                 <tr>
                     <td colspan="2" class="divider" style="padding: 0.15in;">
                         <div class="info-row">
-                            <span class="info-label">Name:</span>
-                            <input type="text" class="field-input field-l" id="buyerName" name="buyerName" required>
+                            <label for="buyerName" class="info-label">Name:</label>
+                            <input type="text" class="field-input field-l" id="buyerName" name="buyerName" required aria-describedby="buyerName-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Email:</span>
-                            <input type="email" class="field-input field-l" id="buyerEmail" name="buyerEmail" required>
+                            <label for="buyerEmail" class="info-label">Email:</label>
+                            <input type="email" class="field-input field-l" id="buyerEmail" name="buyerEmail" required aria-describedby="buyerEmail-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Address:</span>
-                            <input type="text" class="field-input field-l" id="buyerAddress" name="buyerAddress" required>
+                            <label for="buyerAddress" class="info-label">Address:</label>
+                            <input type="text" class="field-input field-l" id="buyerAddress" name="buyerAddress" required aria-describedby="buyerAddress-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">City:</span>
-                            <input type="text" class="field-input field-m" id="buyerCity" name="buyerCity" required>
+                            <label for="buyerCity" class="info-label">City:</label>
+                            <input type="text" class="field-input field-m" id="buyerCity" name="buyerCity" required aria-describedby="buyerCity-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">State:</span>
-                            <input type="text" class="field-input field-xs" id="buyerState" name="buyerState" maxlength="2" required>
-                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
-                            <input type="text" class="field-input field-s" id="buyerZip" name="buyerZip" required>
+                            <label for="buyerState" class="info-label">State:</label>
+                            <input type="text" class="field-input field-xs" id="buyerState" name="buyerState" maxlength="2" required aria-describedby="buyerState-error">
+                            <label for="buyerZip" class="info-label" style="margin-left: 0.1in;">ZIP:</label>
+                            <input type="text" class="field-input field-s" id="buyerZip" name="buyerZip" required aria-describedby="buyerZip-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Phone:</span>
-                            <input type="tel" class="field-input field-m" id="buyerPhone" name="buyerPhone" required>
+                            <label for="buyerPhone" class="info-label">Phone:</label>
+                            <input type="tel" class="field-input field-m" id="buyerPhone" name="buyerPhone" required aria-describedby="buyerPhone-error">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">SSN:</span>
-                            <input type="text" class="field-input field-m" id="buyerSSN" name="buyerSSN" placeholder="000-00-0000" required>
+                            <label for="buyerSSN" class="info-label">SSN:</label>
+                            <input type="text" class="field-input field-m" id="buyerSSN" name="buyerSSN" placeholder="000-00-0000" required aria-describedby="buyerSSN-error">
                         </div>
                     </td>
                     <td colspan="2" style="padding: 0.15in;">
                         <div class="info-row">
-                            <span class="info-label">Name:</span>
+                            <label for="cobuyerName" class="info-label">Name:</label>
                             <input type="text" class="field-input field-l" id="cobuyerName" name="cobuyerName">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Email:</span>
+                            <label for="cobuyerEmail" class="info-label">Email:</label>
                             <input type="email" class="field-input field-l" id="cobuyerEmail" name="cobuyerEmail">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Address:</span>
+                            <label for="cobuyerAddress" class="info-label">Address:</label>
                             <input type="text" class="field-input field-l" id="cobuyerAddress" name="cobuyerAddress">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">City:</span>
+                            <label for="cobuyerCity" class="info-label">City:</label>
                             <input type="text" class="field-input field-m" id="cobuyerCity" name="cobuyerCity">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">State:</span>
+                            <label for="cobuyerState" class="info-label">State:</label>
                             <input type="text" class="field-input field-xs" id="cobuyerState" name="cobuyerState" maxlength="2">
-                            <span class="info-label" style="margin-left: 0.1in;">ZIP:</span>
+                            <label for="cobuyerZip" class="info-label" style="margin-left: 0.1in;">ZIP:</label>
                             <input type="text" class="field-input field-s" id="cobuyerZip" name="cobuyerZip">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">Phone:</span>
+                            <label for="cobuyerPhone" class="info-label">Phone:</label>
                             <input type="tel" class="field-input field-m" id="cobuyerPhone" name="cobuyerPhone">
                         </div>
                         <div class="info-row">
-                            <span class="info-label">SSN:</span>
+                            <label for="cobuyerSSN" class="info-label">SSN:</label>
                             <input type="text" class="field-input field-m" id="cobuyerSSN" name="cobuyerSSN" placeholder="000-00-0000">
                         </div>
                     </td>
                 </tr>
             </table>
 
-            <table class="financial-table">
+            <table class="financial-table" role="table" aria-label="Financial Information">
                 <tr>
-                    <td class="label-cell">Purchase Price:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="purchasePrice" name="purchasePrice" step="0.01" required></td>
+                    <td class="label-cell"><label for="purchasePrice">Purchase Price:</label></td>
+                    <td>$ <input type="number" class="field-input field-m" id="purchasePrice" name="purchasePrice" step="0.01" required aria-describedby="purchasePrice-error"></td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Down Payment:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="downPayment" name="downPayment" step="0.01" required></td>
+                    <td class="label-cell"><label for="downPayment">Down Payment:</label></td>
+                    <td>$ <input type="number" class="field-input field-m" id="downPayment" name="downPayment" step="0.01" required aria-describedby="downPayment-error"></td>
                 </tr>
                 <tr>
-                    <td class="label-cell">Amount to Finance:</td>
-                    <td>$ <input type="number" class="field-input field-m" id="loanAmount" name="loanAmount" readonly></td>
+                    <td class="label-cell"><label for="loanAmount">Amount to Finance:</label></td>
+                    <td>$ <input type="number" class="field-input field-m" id="loanAmount" name="loanAmount" readonly aria-label="Amount to finance, calculated automatically"></td>
                 </tr>
                 <tr>
                     <td class="label-cell">Interest Rate:</td>
@@ -1104,62 +1174,60 @@ title: Individual Application - Florida Estates Phase 2
                 <tr>
                     <td class="label-cell">Term of Loan:</td>
                     <td>
-                        <input type="number" class="field-input field-xs" id="termMonths" name="termMonths" required> months
-                        (<input type="number" class="field-input field-xs" id="termYears" name="termYears"> years)
+                        <label for="termMonths" class="sr-only">Term in months</label>
+                        <input type="number" class="field-input field-xs" id="termMonths" name="termMonths" required aria-describedby="termMonths-error"> months
+                        (<label for="termYears" class="sr-only">Term in years</label><input type="number" class="field-input field-xs" id="termYears" name="termYears" aria-label="Years calculated from months"> years)
                     </td>
                 </tr>
             </table>
 
-            <div class="legal-box">
+            <section class="legal-box" aria-labelledby="legal-terms">
+                <h3 id="legal-terms" class="sr-only">Legal Terms and Conditions</h3>
                 <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
                 
                 <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
                 
                 <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.</p>
                 
-                <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality.</p>
-            </div>
+                <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality. Each municipality maintains a map that depicts its boundaries and extraterritorial jurisdiction. To determine if the property is located within a municipality's extraterritorial jurisdiction or is likely to be located within a municipality's extraterritorial jurisdiction, contact all municipalities located in the general proximity of the property for futher information.</p>
+            </section>
 
-            <div class="signature-section">
-                <table class="signature-table">
+            <section class="signature-section" aria-labelledby="signatures">
+                <h3 id="signatures" class="sr-only">Signatures</h3>
+                <table class="signature-table" role="table" aria-label="Signature Information">
                     <tr>
-                        <td style="width: 10%;">Buyer:</td>
-                        <td style="width: 35%;">
-                            <div class="signature-box" id="buyerSignatureBox" tabindex="0">
+                        <td style="width: 15%;">Buyer:</td>
+                        <td style="width: 40%;">
+                            <button type="button" class="signature-box" id="buyerSignatureBox" tabindex="0" aria-label="Click to add buyer signature">
                                 <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="buyerSignatureDisplay"></div>
+                                <div class="signature-display" id="buyerSignatureDisplay" aria-label="Buyer signature display"></div>
+                            </button>
+                        </td>
+                        <td style="width: 45%; text-align: center; vertical-align: middle;" rowspan="3">
+                            <div style="text-align: center;">
+                                <label for="sellerAcceptanceDate" style="font-size: 9pt; font-weight: bold; display: block; margin-bottom: 0.1in;">Date Accepted by Seller<br>(Office use only)</label>
+                                <input type="text" class="field-input field-m" id="sellerAcceptanceDate" name="sellerAcceptanceDate" readonly style="text-align: center; background: #f9f9f9; border-bottom: 1px solid #000;">
                             </div>
-                        </td>
-                        <td style="width: 10%; text-align: right;">Date:</td>
-                        <td style="width: 20%;">
-                            <span class="signature-line" style="width: 100%;" id="buyerDate"></span>
-                        </td>
-                        <td style="width: 25%; text-align: center;">
-                            <span style="font-size: 9pt;">(Office use only)</span>
                         </td>
                     </tr>
                     <tr style="height: 0.15in;"></tr>
                     <tr>
                         <td>Co-Buyer:</td>
                         <td>
-                            <div class="signature-box" id="cobuyerSignatureBox" tabindex="0">
+                            <button type="button" class="signature-box" id="cobuyerSignatureBox" tabindex="0" aria-label="Click to add co-buyer signature">
                                 <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="cobuyerSignatureDisplay"></div>
-                            </div>
+                                <div class="signature-display" id="cobuyerSignatureDisplay" aria-label="Co-buyer signature display"></div>
+                            </button>
                         </td>
-                        <td style="text-align: right;">Date:</td>
-                        <td>
-                            <span class="signature-line" style="width: 100%;" id="cobuyerDate"></span>
-                        </td>
-                        <td></td>
                     </tr>
                 </table>
-            </div>
+            </section>
 
-            <div class="footer-section">
-                <p>Offer to Purchase Vacant Property - Rio Tierra</p>
-                <p style="margin-top: 0.05in;">1600 Wildcat Dr, Portland, Texas 78374 | NMLS #2263990</p>
-            </div>
+            <footer class="footer-section">
+                <p>Residential Mortgage Loan by: South Texas Origination and Mortgage, LLC</p>
+                <p>1308 E. Jasmine Avenue, McAllen, Texas 78501</p>
+                  <p>956.330.3859 NMLS# 1974725</p>
+            </footer>
 
             <input type="hidden" id="buyerSignatureData" name="buyerSignatureData">
             <input type="hidden" id="cobuyerSignatureData" name="cobuyerSignatureData">
@@ -1167,8 +1235,8 @@ title: Individual Application - Florida Estates Phase 2
     </div>
 
     <div class="control-panel">
-        <div id="statusMsg" class="status-msg"></div>
-        <button type="button" class="btn" id="submitBtn">Submit Application</button>
+        <div id="statusMsg" class="status-msg" role="status" aria-live="polite"></div>
+        <button type="button" class="btn" id="submitBtn" aria-describedby="statusMsg">Submit Application</button>
         <div id="successBtns" style="display: none; margin-top: 15px;">
             <button type="button" class="btn btn-secondary" id="downloadBtn">Download PDF</button>
             <button type="button" class="btn btn-secondary" id="printBtn">Print Document</button>
@@ -1176,24 +1244,25 @@ title: Individual Application - Florida Estates Phase 2
     </div>
 
     <!-- Signature Modal -->
-    <div id="signatureModal" class="modal">
+    <div id="signatureModal" class="modal" role="dialog" aria-labelledby="signatureModalTitle" aria-modal="true">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Add Signature</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
+            <header class="modal-header">
+                <h2 class="modal-title" id="signatureModalTitle">Add Signature</h2>
+                <button class="close-btn" id="closeModal" aria-label="Close signature modal">&times;</button>
+            </header>
+            
+            <div class="tab-buttons" role="tablist" aria-label="Signature input methods">
+                <button class="tab-btn active" id="typeTab" role="tab" aria-selected="true" aria-controls="typeContent">Type</button>
+                <button class="tab-btn" id="drawTab" role="tab" aria-selected="false" aria-controls="drawContent">Draw</button>
             </div>
             
-            <div class="tab-buttons">
-                <button class="tab-btn active" id="typeTab">Type</button>
-                <button class="tab-btn" id="drawTab">Draw</button>
+            <div id="typeContent" class="tab-content active" role="tabpanel" aria-labelledby="typeTab">
+                <label for="signatureTypeInput" class="sr-only">Type your signature</label>
+                <input type="text" class="type-input" id="signatureTypeInput" placeholder="Type your signature" aria-label="Type your signature here">
             </div>
             
-            <div id="typeContent" class="tab-content active">
-                <input type="text" class="type-input" id="signatureTypeInput" placeholder="Type your signature">
-            </div>
-            
-            <div id="drawContent" class="tab-content">
-                <canvas id="signatureCanvas" class="canvas-container" width="400" height="150"></canvas>
+            <div id="drawContent" class="tab-content" role="tabpanel" aria-labelledby="drawTab">
+                <canvas id="signatureCanvas" class="canvas-container" width="400" height="150" aria-label="Draw your signature here" tabindex="0"></canvas>
             </div>
             
             <div style="margin-top: 20px; text-align: right;">
@@ -1211,20 +1280,13 @@ title: Individual Application - Florida Estates Phase 2
     </section>
   </main>
 
-          <footer class="form-footer">
-            <p>Need assistance? <a href="#contact">Contact our team</a> for help with your application.</p>
-          </footer>
-        </div>
-      </div>
-    </section>
-  </main>
   <footer class="footer">
     <div class="footer-top">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-about">
             <div class="footer-logo">
-              <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="70" height="70">
+              <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="70" height="70" loading="lazy" decoding="async">
             </div>
             <p class="footer-desc">Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design.</p>
           </div>
@@ -1342,11 +1404,9 @@ title: Individual Application - Florida Estates Phase 2
     let generatedPDF = null;
     let permanentPdfUrl = null;
 
-    // Set today's date
+    // Set today's date for submission
     const today = new Date();
     const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
-    document.getElementById('buyerDate').textContent = dateStr;
-    document.getElementById('cobuyerDate').textContent = dateStr;
 
     // FIXED: Canvas initialization with proper mobile support - WIDER for signatures
     function initializeCanvas() {
@@ -1389,6 +1449,15 @@ title: Individual Application - Florida Estates Phase 2
       signatureCanvas.addEventListener('touchstart', handleTouch);
       signatureCanvas.addEventListener('touchmove', handleTouch);
       signatureCanvas.addEventListener('touchend', stopDrawing);
+
+      // Keyboard events for accessibility
+      signatureCanvas.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          // Focus on clear or save button for keyboard users
+          clearBtn.focus();
+        }
+      });
     }
 
     function startDrawing(e) {
@@ -1434,6 +1503,15 @@ title: Individual Application - Florida Estates Phase 2
       modal.classList.add('active');
       signatureTypeInput.value = '';
       
+      // Focus management for accessibility
+      setTimeout(() => {
+        if (typeContent.classList.contains('active')) {
+          signatureTypeInput.focus();
+        } else {
+          signatureCanvas.focus();
+        }
+      }, 100);
+      
       // Wait for modal to render, then initialize canvas
       setTimeout(() => {
         initializeCanvas();
@@ -1450,6 +1528,10 @@ title: Individual Application - Florida Estates Phase 2
     function closeModalFn() {
       modal.classList.remove('active');
       currentSigTarget = null;
+      // Return focus to the signature box that opened the modal
+      if (currentSigTarget) {
+        currentSigTarget.focus();
+      }
     }
 
     // Event listeners
@@ -1458,12 +1540,22 @@ title: Individual Application - Florida Estates Phase 2
       if (e.target === modal) closeModalFn();
     });
 
+    // Escape key to close modal
+    modal.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModalFn();
+      }
+    });
+
     // Tab switching
     typeTab.addEventListener('click', () => {
       typeTab.classList.add('active');
       drawTab.classList.remove('active');
       typeContent.classList.add('active');
       drawContent.classList.remove('active');
+      typeTab.setAttribute('aria-selected', 'true');
+      drawTab.setAttribute('aria-selected', 'false');
+      signatureTypeInput.focus();
     });
 
     drawTab.addEventListener('click', () => {
@@ -1471,11 +1563,14 @@ title: Individual Application - Florida Estates Phase 2
       typeTab.classList.remove('active');
       drawContent.classList.add('active');
       typeContent.classList.remove('active');
+      drawTab.setAttribute('aria-selected', 'true');
+      typeTab.setAttribute('aria-selected', 'false');
       
       // Longer delay for mobile to ensure proper rendering
       setTimeout(() => {
         initializeCanvas();
         setupCanvasDrawing();
+        signatureCanvas.focus();
       }, 150);
     });
 
@@ -1483,6 +1578,7 @@ title: Individual Application - Florida Estates Phase 2
     clearBtn.addEventListener('click', () => {
       if (typeContent.classList.contains('active')) {
         signatureTypeInput.value = '';
+        signatureTypeInput.focus();
       } else {
         if (ctx) {
           ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
@@ -1490,6 +1586,7 @@ title: Individual Application - Florida Estates Phase 2
           ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
           ctx.fillStyle = '#000080';
         }
+        signatureCanvas.focus();
       }
     });
 
@@ -1506,15 +1603,20 @@ title: Individual Application - Florida Estates Phase 2
         display.innerHTML = `<span class="typed-signature">${signatureTypeInput.value}</span>`;
         dataField.value = signatureTypeInput.value;
         placeholder.style.display = 'none';
+        // Update aria-label to indicate signature is present
+        currentSigTarget.setAttribute('aria-label', 'Signature added - click to change');
       } else if (drawContent.classList.contains('active') && ctx) {
         const imageData = signatureCanvas.toDataURL();
         const img = document.createElement('img');
         img.src = imageData;
         img.className = 'drawn-signature';
+        img.alt = 'Drawn signature';
         display.innerHTML = '';
         display.appendChild(img);
         dataField.value = imageData;
         placeholder.style.display = 'none';
+        // Update aria-label to indicate signature is present
+        currentSigTarget.setAttribute('aria-label', 'Signature added - click to change');
       }
       
       closeModalFn();
@@ -1607,13 +1709,17 @@ title: Individual Application - Florida Estates Phase 2
         const field = document.getElementById(id);
         if (!field.value || field.value.trim() === '') {
           field.classList.add('error');
+          field.setAttribute('aria-invalid', 'true');
           valid = false;
+        } else {
+          field.setAttribute('aria-invalid', 'false');
         }
       });
       
       const email = document.getElementById('buyerEmail');
       if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
         email.classList.add('error');
+        email.setAttribute('aria-invalid', 'true');
         valid = false;
       }
       
