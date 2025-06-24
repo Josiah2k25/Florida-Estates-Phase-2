@@ -9,23 +9,62 @@ title: Individual Application - Florida Estates Phase 2
   <meta name="description" content="Individual Application Form for Rio Tierra Real Estate developments. Apply to purchase premium residential lots in our exclusive communities.">
   <meta name="keywords" content="individual application, Rio Tierra, residential lots, real estate, Florida Estates, Lunar Estates">
   <meta name="author" content="Rio Tierra Real Estate">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#c1743c">
+  <link rel="canonical" href="https://riotierra.com/individual-application/">
+  
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Rio Tierra | Individual Application Form">
   <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/Rio Tierra Logo.webp">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#c1743c">
+  <meta property="og:url" content="https://riotierra.com/individual-application/">
+  <meta property="og:site_name" content="Rio Tierra Real Estate">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rio Tierra | Individual Application Form">
+  <meta name="twitter:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
+  <meta name="twitter:image" content="/Rio Tierra Logo.webp">
+  
   <title>Rio Tierra | Individual Application Form</title>
   
-  <link rel="preload" href="/Rio Tierra Logo.webp" as="image">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="/footer.css">
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="/Rio Tierra Logo.webp" as="image" fetchpriority="high">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   
-  <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script async src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="all">
+  <link rel="stylesheet" href="/footer.css" media="all">
+  
+  <!-- Critical External Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Rio Tierra Real Estate",
+    "url": "https://riotierra.com",
+    "logo": "https://riotierra.com/Rio Tierra Logo.webp",
+    "description": "Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "McAllen",
+      "addressRegion": "TX",
+      "postalCode": "78505",
+      "addressCountry": "US"
+    },
+    "email": "info@riotierra.com",
+    "areaServed": "Texas",
+    "serviceType": "Real Estate Sales"
+  }
+  </script>
   
   <style>
     :root {
@@ -46,6 +85,7 @@ title: Individual Application - Florida Estates Phase 2
       --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       --border-radius: 8px;
       --border-radius-lg: 12px;
+      --focus-ring: 0 0 0 3px rgba(193, 116, 60, 0.3);
     }
 
     *, *::before, *::after {
@@ -77,6 +117,24 @@ title: Individual Application - Florida Estates Phase 2
       clip: rect(0, 0, 0, 0);
       white-space: nowrap;
       border: 0;
+    }
+
+    /* Skip Links for Accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--primary);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 6px;
     }
 
     .container {
@@ -121,6 +179,12 @@ title: Individual Application - Florida Estates Phase 2
       transform: translateY(-1px);
     }
 
+    .navbar-brand:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--border-radius);
+    }
+
     .navbar-logo {
       height: 45px;
       width: auto;
@@ -145,15 +209,16 @@ title: Individual Application - Florida Estates Phase 2
       position: relative;
       padding: 12px 0;
       letter-spacing: 0.01em;
-      min-height: 44px;
-      min-width: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .navbar-links a:hover {
       color: var(--text-dark);
+    }
+
+    .navbar-links a:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--border-radius);
     }
 
     .navbar-links a.active {
@@ -193,11 +258,6 @@ title: Individual Application - Florida Estates Phase 2
       cursor: pointer;
       box-shadow: var(--shadow-sm);
       letter-spacing: 0.01em;
-      min-height: 44px;
-      min-width: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .navbar-cta:hover {
@@ -205,6 +265,11 @@ title: Individual Application - Florida Estates Phase 2
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
       color: #ffffff;
+    }
+
+    .navbar-cta:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .navbar-cta:active {
@@ -220,12 +285,15 @@ title: Individual Application - Florida Estates Phase 2
       padding: 8px;
       border-radius: 8px;
       transition: all 0.25s ease;
-      min-height: 44px;
-      min-width: 44px;
     }
 
     .mobile-menu-btn:hover {
       background: rgba(0, 0, 0, 0.05);
+    }
+
+    .mobile-menu-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .mobile-menu-btn span {
@@ -347,13 +415,16 @@ title: Individual Application - Florida Estates Phase 2
       outline: none;
       display: inline-block;
       vertical-align: baseline;
-      min-height: 44px;
     }
 
     .field-input:focus {
       background: rgba(255, 255, 240, 0.5);
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      box-shadow: var(--focus-ring);
+    }
+
+    .field-input[aria-invalid="true"] {
+      background: #ffe0e0;
+      border-bottom: 2px solid #d00;
     }
 
     .field-xs { width: 0.5in; }
@@ -468,8 +539,6 @@ title: Individual Application - Florida Estates Phase 2
       position: relative;
       cursor: pointer;
       vertical-align: bottom;
-      min-height: 44px;
-      min-width: 44px;
     }
 
     .signature-box:hover {
@@ -477,15 +546,16 @@ title: Individual Application - Florida Estates Phase 2
     }
 
     .signature-box:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--border-radius);
     }
 
     .signature-placeholder {
       position: absolute;
       bottom: 0.05in;
       left: 0.1in;
-      color: #666;
+      color: #888;
       font-size: 9pt;
       font-style: italic;
     }
@@ -537,22 +607,23 @@ title: Individual Application - Florida Estates Phase 2
       margin: 0 5px;
       font-family: Arial, sans-serif;
       border-radius: 6px;
-      min-height: 44px;
-      min-width: 44px;
+      transition: var(--transition);
     }
 
     .btn:hover:not(:disabled) {
       background: #555;
+      transform: translateY(-1px);
     }
 
     .btn:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .btn:disabled {
       background: #ccc;
       cursor: not-allowed;
+      transform: none;
     }
 
     .btn-secondary {
@@ -570,6 +641,7 @@ title: Individual Application - Florida Estates Phase 2
       padding: 10px;
       display: none;
       border-radius: 4px;
+      font-weight: 500;
     }
 
     .status-msg.show {
@@ -579,16 +651,19 @@ title: Individual Application - Florida Estates Phase 2
     .status-msg.success {
       background: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
     }
 
     .status-msg.error {
       background: #f8d7da;
       color: #721c24;
+      border: 1px solid #f5c6cb;
     }
 
     .status-msg.info {
       background: #d1ecf1;
       color: #0c5460;
+      border: 1px solid #bee5eb;
     }
 
     .loading-overlay {
@@ -668,17 +743,23 @@ title: Individual Application - Florida Estates Phase 2
       cursor: pointer;
       padding: 0;
       color: #666;
-      min-height: 44px;
-      min-width: 44px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
     }
 
     .close-btn:hover {
       color: #000;
+      background: rgba(0,0,0,0.1);
     }
 
     .close-btn:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .tab-buttons {
@@ -693,18 +774,17 @@ title: Individual Application - Florida Estates Phase 2
       border: 1px solid #ccc;
       background: white;
       cursor: pointer;
-      min-height: 44px;
-      min-width: 44px;
+      transition: var(--transition);
+    }
+
+    .tab-btn:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .tab-btn.active {
       background: #333;
       color: white;
-    }
-
-    .tab-btn:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
     }
 
     .tab-content {
@@ -724,12 +804,12 @@ title: Individual Application - Florida Estates Phase 2
       text-align: center;
       font-family: 'Brush Script MT', cursive;
       color: #000080;
-      min-height: 44px;
+      border-radius: var(--border-radius);
     }
 
     .type-input:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .canvas-container {
@@ -744,8 +824,8 @@ title: Individual Application - Florida Estates Phase 2
     }
 
     .canvas-container:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
     }
 
     .form-footer {
@@ -765,11 +845,6 @@ title: Individual Application - Florida Estates Phase 2
       color: var(--primary);
       text-decoration: none;
       font-weight: 600;
-      min-height: 44px;
-      min-width: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .form-footer a:hover {
@@ -777,8 +852,17 @@ title: Individual Application - Florida Estates Phase 2
     }
 
     .form-footer a:focus {
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+      outline: none;
+      box-shadow: var(--focus-ring);
+      border-radius: var(--border-radius);
+    }
+
+    /* Error styling */
+    .field-error {
+      color: #d00;
+      font-size: 10pt;
+      margin-top: 2px;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -834,11 +918,10 @@ title: Individual Application - Florida Estates Phase 2
         font-size: 2.25rem;
       }
 
-      /* SIMPLE SCALING SOLUTION */
       .page-container {
         transform: scale(0.7);
         transform-origin: top left;
-        width: 142.86%; /* 100% / 0.7 to compensate for scale */
+        width: 142.86%;
         margin-bottom: -30%;
       }
 
@@ -912,11 +995,10 @@ title: Individual Application - Florida Estates Phase 2
         font-size: 2rem;
       }
 
-      /* SMALLER SCALE FOR TINY SCREENS */
       .page-container {
         transform: scale(0.5);
         transform-origin: top left;
-        width: 200%; /* 100% / 0.5 to compensate for scale */
+        width: 200%;
         margin-bottom: -50%;
       }
 
@@ -970,6 +1052,16 @@ title: Individual Application - Florida Estates Phase 2
       }
     }
 
+    @media (prefers-contrast: high) {
+      :root {
+        --border-color: #000;
+        --text-light: #333;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.4);
+      }
+    }
+
     @media print {
       body {
         background: white;
@@ -981,7 +1073,8 @@ title: Individual Application - Florida Estates Phase 2
       .loading-overlay,
       .modal,
       .form-header,
-      .form-footer {
+      .form-footer,
+      .skip-link {
         display: none !important;
       }
 
@@ -992,6 +1085,7 @@ title: Individual Application - Florida Estates Phase 2
         box-shadow: none;
         padding: 0.75in;
         page-break-after: always;
+        transform: none !important;
       }
 
       .field-input {
@@ -1011,33 +1105,34 @@ title: Individual Application - Florida Estates Phase 2
         border-bottom: 1px solid #000 !important;
       }
     }
-
-    .field-input.error {
-      background: #ffe0e0;
-      border-bottom: 2px solid #d00;
-    }
   </style>
 </head>
 <body>
+  <!-- Skip Links for Screen Readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#individual-application" class="skip-link">Skip to application form</a>
+
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <a href="/" class="navbar-brand" aria-label="Rio Tierra Home">
         <img src="/Rio Tierra Logo.webp" 
-             alt="Rio Tierra Logo" 
+             alt="Rio Tierra Real Estate Logo" 
              class="navbar-logo" 
              width="65" 
-             height="65"
-             loading="eager"
-             decoding="async">
+             height="65">
       </a>
-      <div class="navbar-links" role="menubar">
-        <a href="/" role="menuitem">Home</a>
-        <a href="/sales/" role="menuitem">Sales</a>
-        <a href="#contact" class="active" role="menuitem" aria-current="page">Individual Application</a>
-      </div>
+      <ul class="navbar-links" role="menubar" id="navbar-links">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/sales/" role="menuitem">Sales</a></li>
+        <li role="none"><a href="#contact" class="active" role="menuitem" aria-current="page">Individual Application</a></li>
+      </ul>
       <div class="navbar-right">
         <a href="#contact" class="navbar-cta">Get In Touch</a>
-        <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+        <button class="mobile-menu-btn" 
+                aria-label="Toggle mobile menu" 
+                aria-expanded="false" 
+                aria-controls="navbar-links"
+                id="mobile-menu-btn">
           <span></span>
           <span></span>
           <span></span>
@@ -1046,231 +1141,444 @@ title: Individual Application - Florida Estates Phase 2
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <section class="form-section" id="individual-application" aria-labelledby="form-heading">
       <div class="container">
         <div class="form-container">
           <header class="form-header">
             <h1 id="form-heading">Individual Application Form</h1>
           </header>
-          <div class="loading-overlay" id="loadingOverlay" aria-label="Loading">
-        <div class="spinner" aria-label="Loading spinner"></div>
-    </div>
+          
+          <div class="loading-overlay" id="loadingOverlay" role="dialog" aria-live="polite" aria-label="Processing application">
+            <div class="spinner" aria-hidden="true"></div>
+            <span class="sr-only">Processing your application, please wait...</span>
+          </div>
 
-    <div class="page-container" id="documentPage">
-        <div class="form-number"></div>
-        
-        <header class="header-section">
-            <h2 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h2>
-        </header>
-
-        <form id="purchaseForm" novalidate>
-            <div class="info-line">
-                <span class="label">Seller:</span>
-                <span>SNT RGV, LLC, P.O. Box 610, McAllen, Texas 78505</span>
+          <div class="page-container" id="documentPage">
+            <div class="form-number">Form 2024-OFFER-001</div>
+            
+            <div class="header-section">
+                <h2 class="main-title">OFFER TO PURCHASE VACANT PROPERTY</h2>
             </div>
 
-            <div class="info-line">
-                <label for="lot" class="label">Lot#</label>
-                <input type="text" class="field-input field-xs" id="lot" name="lot" required aria-describedby="lot-error">
-                
-                <label for="block" class="label" style="margin-left: 0.3in;">Block#</label>
-                <input type="text" class="field-input field-xs" id="block" name="block" required aria-describedby="block-error">
-                
-                <span class="label" style="margin-left: 0.3in;">Subdivision:</span>
-                <span>Florida Estates Subdivision Section II, Cameron County, TX</span>
-            </div>
+            <form id="purchaseForm" novalidate aria-describedby="form-instructions">
+                <div class="sr-only" id="form-instructions">
+                  Complete all required fields marked with an asterisk. Use tab to navigate between fields.
+                </div>
 
-            <table class="buyer-table" role="table" aria-label="Buyer and Co-Buyer Information">
-                <tr>
-                    <td class="section-header divider" colspan="2">Buyer</td>
-                    <td class="section-header" colspan="2">Co-Buyer</td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="divider" style="padding: 0.15in;">
-                        <div class="info-row">
-                            <label for="buyerName" class="info-label">Name:</label>
-                            <input type="text" class="field-input field-l" id="buyerName" name="buyerName" required aria-describedby="buyerName-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerEmail" class="info-label">Email:</label>
-                            <input type="email" class="field-input field-l" id="buyerEmail" name="buyerEmail" required aria-describedby="buyerEmail-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerAddress" class="info-label">Address:</label>
-                            <input type="text" class="field-input field-l" id="buyerAddress" name="buyerAddress" required aria-describedby="buyerAddress-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerCity" class="info-label">City:</label>
-                            <input type="text" class="field-input field-m" id="buyerCity" name="buyerCity" required aria-describedby="buyerCity-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerState" class="info-label">State:</label>
-                            <input type="text" class="field-input field-xs" id="buyerState" name="buyerState" maxlength="2" required aria-describedby="buyerState-error">
-                            <label for="buyerZip" class="info-label" style="margin-left: 0.1in;">ZIP:</label>
-                            <input type="text" class="field-input field-s" id="buyerZip" name="buyerZip" required aria-describedby="buyerZip-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerPhone" class="info-label">Phone:</label>
-                            <input type="tel" class="field-input field-m" id="buyerPhone" name="buyerPhone" required aria-describedby="buyerPhone-error">
-                        </div>
-                        <div class="info-row">
-                            <label for="buyerSSN" class="info-label">SSN:</label>
-                            <input type="text" class="field-input field-m" id="buyerSSN" name="buyerSSN" placeholder="000-00-0000" required aria-describedby="buyerSSN-error">
-                        </div>
-                    </td>
-                    <td colspan="2" style="padding: 0.15in;">
-                        <div class="info-row">
-                            <label for="cobuyerName" class="info-label">Name:</label>
-                            <input type="text" class="field-input field-l" id="cobuyerName" name="cobuyerName">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerEmail" class="info-label">Email:</label>
-                            <input type="email" class="field-input field-l" id="cobuyerEmail" name="cobuyerEmail">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerAddress" class="info-label">Address:</label>
-                            <input type="text" class="field-input field-l" id="cobuyerAddress" name="cobuyerAddress">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerCity" class="info-label">City:</label>
-                            <input type="text" class="field-input field-m" id="cobuyerCity" name="cobuyerCity">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerState" class="info-label">State:</label>
-                            <input type="text" class="field-input field-xs" id="cobuyerState" name="cobuyerState" maxlength="2">
-                            <label for="cobuyerZip" class="info-label" style="margin-left: 0.1in;">ZIP:</label>
-                            <input type="text" class="field-input field-s" id="cobuyerZip" name="cobuyerZip">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerPhone" class="info-label">Phone:</label>
-                            <input type="tel" class="field-input field-m" id="cobuyerPhone" name="cobuyerPhone">
-                        </div>
-                        <div class="info-row">
-                            <label for="cobuyerSSN" class="info-label">SSN:</label>
-                            <input type="text" class="field-input field-m" id="cobuyerSSN" name="cobuyerSSN" placeholder="000-00-0000">
-                        </div>
-                    </td>
-                </tr>
-            </table>
+                <div class="info-line">
+                    <span class="label">Seller:</span>
+                    <span>SNT RGV, LLC, P.O. Box 610, McAllen, Texas 78505</span>
+                </div>
 
-            <table class="financial-table" role="table" aria-label="Financial Information">
-                <tr>
-                    <td class="label-cell"><label for="purchasePrice">Purchase Price:</label></td>
-                    <td>$ <input type="number" class="field-input field-m" id="purchasePrice" name="purchasePrice" step="0.01" required aria-describedby="purchasePrice-error"></td>
-                </tr>
-                <tr>
-                    <td class="label-cell"><label for="downPayment">Down Payment:</label></td>
-                    <td>$ <input type="number" class="field-input field-m" id="downPayment" name="downPayment" step="0.01" required aria-describedby="downPayment-error"></td>
-                </tr>
-                <tr>
-                    <td class="label-cell"><label for="loanAmount">Amount to Finance:</label></td>
-                    <td>$ <input type="number" class="field-input field-m" id="loanAmount" name="loanAmount" readonly aria-label="Amount to finance, calculated automatically"></td>
-                </tr>
-                <tr>
-                    <td class="label-cell">Interest Rate:</td>
-                    <td><strong>10.00%</strong> per annum</td>
-                </tr>
-                <tr>
-                    <td class="label-cell">Term of Loan:</td>
-                    <td>
-                        <label for="termMonths" class="sr-only">Term in months</label>
-                        <input type="number" class="field-input field-xs" id="termMonths" name="termMonths" required aria-describedby="termMonths-error"> months
-                        (<label for="termYears" class="sr-only">Term in years</label><input type="number" class="field-input field-xs" id="termYears" name="termYears" aria-label="Years calculated from months"> years)
-                    </td>
-                </tr>
-            </table>
+                <div class="info-line">
+                    <label for="lot" class="label">Lot# *</label>
+                    <input type="text" 
+                           class="field-input field-xs" 
+                           id="lot" 
+                           name="lot" 
+                           required 
+                           aria-describedby="lot-error"
+                           aria-invalid="false">
+                    <span class="field-error sr-only" id="lot-error"></span>
+                    
+                    <label for="block" class="label" style="margin-left: 0.3in;">Block# *</label>
+                    <input type="text" 
+                           class="field-input field-xs" 
+                           id="block" 
+                           name="block" 
+                           required 
+                           aria-describedby="block-error"
+                           aria-invalid="false">
+                    <span class="field-error sr-only" id="block-error"></span>
+                    
+                    <span class="label" style="margin-left: 0.3in;">Subdivision:</span>
+                    <span>Florida Estates Subdivision Section II, Cameron County, TX</span>
+                </div>
 
-            <section class="legal-box" aria-labelledby="legal-terms">
-                <h3 id="legal-terms" class="sr-only">Legal Terms and Conditions</h3>
-                <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
-                
-                <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
-                
-                <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.</p>
-                
-                <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality. Each municipality maintains a map that depicts its boundaries and extraterritorial jurisdiction. To determine if the property is located within a municipality's extraterritorial jurisdiction or is likely to be located within a municipality's extraterritorial jurisdiction, contact all municipalities located in the general proximity of the property for futher information.</p>
-            </section>
-
-            <section class="signature-section" aria-labelledby="signatures">
-                <h3 id="signatures" class="sr-only">Signatures</h3>
-                <table class="signature-table" role="table" aria-label="Signature Information">
-                    <tr>
-                        <td style="width: 15%;">Buyer:</td>
-                        <td style="width: 40%;">
-                            <button type="button" class="signature-box" id="buyerSignatureBox" tabindex="0" aria-label="Click to add buyer signature">
-                                <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="buyerSignatureDisplay" aria-label="Buyer signature display"></div>
-                            </button>
-                        </td>
-                        <td style="width: 45%; text-align: center; vertical-align: middle;" rowspan="3">
-                            <div style="text-align: center;">
-                                <label for="sellerAcceptanceDate" style="font-size: 9pt; font-weight: bold; display: block; margin-bottom: 0.1in;">Date Accepted by Seller<br>(Office use only)</label>
-                                <input type="text" class="field-input field-m" id="sellerAcceptanceDate" name="sellerAcceptanceDate" readonly style="text-align: center; background: #f9f9f9; border-bottom: 1px solid #000;">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr style="height: 0.15in;"></tr>
-                    <tr>
-                        <td>Co-Buyer:</td>
-                        <td>
-                            <button type="button" class="signature-box" id="cobuyerSignatureBox" tabindex="0" aria-label="Click to add co-buyer signature">
-                                <span class="signature-placeholder">Click here to sign</span>
-                                <div class="signature-display" id="cobuyerSignatureDisplay" aria-label="Co-buyer signature display"></div>
-                            </button>
-                        </td>
-                    </tr>
+                <table class="buyer-table" role="table" aria-label="Buyer and Co-buyer Information">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="section-header divider">Buyer</th>
+                            <th scope="col" class="section-header">Co-Buyer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="divider" style="padding: 0.15in;">
+                                <div class="info-row">
+                                    <label for="buyerName" class="info-label">Name: *</label>
+                                    <input type="text" 
+                                           class="field-input field-l" 
+                                           id="buyerName" 
+                                           name="buyerName" 
+                                           required 
+                                           aria-describedby="buyer-name-error"
+                                           aria-invalid="false"
+                                           autocomplete="name">
+                                    <span class="field-error sr-only" id="buyer-name-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerEmail" class="info-label">Email: *</label>
+                                    <input type="email" 
+                                           class="field-input field-l" 
+                                           id="buyerEmail" 
+                                           name="buyerEmail" 
+                                           required 
+                                           aria-describedby="buyer-email-error"
+                                           aria-invalid="false"
+                                           autocomplete="email">
+                                    <span class="field-error sr-only" id="buyer-email-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerAddress" class="info-label">Address: *</label>
+                                    <input type="text" 
+                                           class="field-input field-l" 
+                                           id="buyerAddress" 
+                                           name="buyerAddress" 
+                                           required 
+                                           aria-describedby="buyer-address-error"
+                                           aria-invalid="false"
+                                           autocomplete="street-address">
+                                    <span class="field-error sr-only" id="buyer-address-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerCity" class="info-label">City: *</label>
+                                    <input type="text" 
+                                           class="field-input field-m" 
+                                           id="buyerCity" 
+                                           name="buyerCity" 
+                                           required 
+                                           aria-describedby="buyer-city-error"
+                                           aria-invalid="false"
+                                           autocomplete="address-level2">
+                                    <span class="field-error sr-only" id="buyer-city-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerState" class="info-label">State: *</label>
+                                    <input type="text" 
+                                           class="field-input field-xs" 
+                                           id="buyerState" 
+                                           name="buyerState" 
+                                           maxlength="2" 
+                                           required 
+                                           aria-describedby="buyer-state-error"
+                                           aria-invalid="false"
+                                           autocomplete="address-level1">
+                                    <span class="field-error sr-only" id="buyer-state-error"></span>
+                                    <label for="buyerZip" class="info-label" style="margin-left: 0.1in;">ZIP: *</label>
+                                    <input type="text" 
+                                           class="field-input field-s" 
+                                           id="buyerZip" 
+                                           name="buyerZip" 
+                                           required 
+                                           aria-describedby="buyer-zip-error"
+                                           aria-invalid="false"
+                                           autocomplete="postal-code">
+                                    <span class="field-error sr-only" id="buyer-zip-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerPhone" class="info-label">Phone: *</label>
+                                    <input type="tel" 
+                                           class="field-input field-m" 
+                                           id="buyerPhone" 
+                                           name="buyerPhone" 
+                                           required 
+                                           aria-describedby="buyer-phone-error"
+                                           aria-invalid="false"
+                                           autocomplete="tel">
+                                    <span class="field-error sr-only" id="buyer-phone-error"></span>
+                                </div>
+                                <div class="info-row">
+                                    <label for="buyerSSN" class="info-label">SSN: *</label>
+                                    <input type="text" 
+                                           class="field-input field-m" 
+                                           id="buyerSSN" 
+                                           name="buyerSSN" 
+                                           placeholder="000-00-0000" 
+                                           required 
+                                           aria-describedby="buyer-ssn-error"
+                                           aria-invalid="false">
+                                    <span class="field-error sr-only" id="buyer-ssn-error"></span>
+                                </div>
+                            </td>
+                            <td style="padding: 0.15in;">
+                                <div class="info-row">
+                                    <label for="cobuyerName" class="info-label">Name:</label>
+                                    <input type="text" 
+                                           class="field-input field-l" 
+                                           id="cobuyerName" 
+                                           name="cobuyerName"
+                                           autocomplete="name">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerEmail" class="info-label">Email:</label>
+                                    <input type="email" 
+                                           class="field-input field-l" 
+                                           id="cobuyerEmail" 
+                                           name="cobuyerEmail"
+                                           autocomplete="email">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerAddress" class="info-label">Address:</label>
+                                    <input type="text" 
+                                           class="field-input field-l" 
+                                           id="cobuyerAddress" 
+                                           name="cobuyerAddress"
+                                           autocomplete="street-address">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerCity" class="info-label">City:</label>
+                                    <input type="text" 
+                                           class="field-input field-m" 
+                                           id="cobuyerCity" 
+                                           name="cobuyerCity"
+                                           autocomplete="address-level2">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerState" class="info-label">State:</label>
+                                    <input type="text" 
+                                           class="field-input field-xs" 
+                                           id="cobuyerState" 
+                                           name="cobuyerState" 
+                                           maxlength="2"
+                                           autocomplete="address-level1">
+                                    <label for="cobuyerZip" class="info-label" style="margin-left: 0.1in;">ZIP:</label>
+                                    <input type="text" 
+                                           class="field-input field-s" 
+                                           id="cobuyerZip" 
+                                           name="cobuyerZip"
+                                           autocomplete="postal-code">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerPhone" class="info-label">Phone:</label>
+                                    <input type="tel" 
+                                           class="field-input field-m" 
+                                           id="cobuyerPhone" 
+                                           name="cobuyerPhone"
+                                           autocomplete="tel">
+                                </div>
+                                <div class="info-row">
+                                    <label for="cobuyerSSN" class="info-label">SSN:</label>
+                                    <input type="text" 
+                                           class="field-input field-m" 
+                                           id="cobuyerSSN" 
+                                           name="cobuyerSSN" 
+                                           placeholder="000-00-0000">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
-            </section>
 
-            <footer class="footer-section">
-                <p>Residential Mortgage Loan by: South Texas Origination and Mortgage, LLC</p>
-                <p>1308 E. Jasmine Avenue, McAllen, Texas 78501</p>
-                  <p>956.330.3859 NMLS# 1974725</p>
-            </footer>
+                <table class="financial-table" role="table" aria-label="Financial Information">
+                    <tbody>
+                        <tr>
+                            <td class="label-cell">
+                                <label for="purchasePrice">Purchase Price: *</label>
+                            </td>
+                            <td>
+                                $ <input type="number" 
+                                         class="field-input field-m" 
+                                         id="purchasePrice" 
+                                         name="purchasePrice" 
+                                         step="0.01" 
+                                         required 
+                                         aria-describedby="purchase-price-error"
+                                         aria-invalid="false">
+                                <span class="field-error sr-only" id="purchase-price-error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">
+                                <label for="downPayment">Down Payment: *</label>
+                            </td>
+                            <td>
+                                $ <input type="number" 
+                                         class="field-input field-m" 
+                                         id="downPayment" 
+                                         name="downPayment" 
+                                         step="0.01" 
+                                         required 
+                                         aria-describedby="down-payment-error"
+                                         aria-invalid="false">
+                                <span class="field-error sr-only" id="down-payment-error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">
+                                <label for="loanAmount">Amount to Finance:</label>
+                            </td>
+                            <td>
+                                $ <input type="number" 
+                                         class="field-input field-m" 
+                                         id="loanAmount" 
+                                         name="loanAmount" 
+                                         readonly 
+                                         aria-label="Amount to finance, calculated automatically">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">Interest Rate:</td>
+                            <td><strong>10.00%</strong> per annum</td>
+                        </tr>
+                        <tr>
+                            <td class="label-cell">
+                                <label for="termMonths">Term of Loan: *</label>
+                            </td>
+                            <td>
+                                <input type="number" 
+                                       class="field-input field-xs" 
+                                       id="termMonths" 
+                                       name="termMonths" 
+                                       required 
+                                       aria-describedby="term-months-error"
+                                       aria-invalid="false"> months
+                                (<input type="number" 
+                                        class="field-input field-xs" 
+                                        id="termYears" 
+                                        name="termYears"
+                                        aria-label="Term in years, calculated from months"> years)
+                                <span class="field-error sr-only" id="term-months-error"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <input type="hidden" id="buyerSignatureData" name="buyerSignatureData">
-            <input type="hidden" id="cobuyerSignatureData" name="cobuyerSignatureData">
-        </form>
-    </div>
+                <div class="legal-box" role="region" aria-label="Legal Terms and Conditions">
+                    <p>An Owner's Title Insurance Policy is not provided in this sale. Buyer may obtain a Title Insurance Policy at Buyer's expense from a title company of Buyer's choice.</p>
+                    
+                    <p>Buyer is offering to purchase the property described herein "AS IS" in its present condition. The Property is subject to certain restrictions which Buyer acknowledges having received a copy of.</p>
+                    
+                    <p>The documents signed at the closing of the sale and purchase will contain the entire agreement. Any promise or representation by any salesperson or employee of the Seller in writing or orally that is different than the documents signed at the closing is void. Any dispute between Seller and Buyer related to this agreement which is not resolved through informal discussion will be referred to a mutually acceptable mediation service or provider. The parties to the mediation shall bear the mediation cost equally.</p>
+                    
+                    <p>Notice Regarding Possible Annexation: If the property that is the subject of this Contract is located outside the limits of a municipality, the property may now or later be included in the extraterritorial jurisdiction of a municipality and may now or later be subject to annexation by the municipality. Each municipality maintains a map that depicts its boundaries and extraterritorial jurisdiction. To determine if the property is located within a municipality's extraterritorial jurisdiction or is likely to be located within a municipality's extraterritorial jurisdiction, contact all municipalities located in the general proximity of the property for further information.</p>
+                </div>
 
-    <div class="control-panel">
-        <div id="statusMsg" class="status-msg" role="status" aria-live="polite"></div>
-        <button type="button" class="btn" id="submitBtn" aria-describedby="statusMsg">Submit Application</button>
-        <div id="successBtns" style="display: none; margin-top: 15px;">
-            <button type="button" class="btn btn-secondary" id="downloadBtn">Download PDF</button>
-            <button type="button" class="btn btn-secondary" id="printBtn">Print Document</button>
-        </div>
-    </div>
+                <div class="signature-section">
+                    <table class="signature-table" role="table" aria-label="Signature Section">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10%;">
+                                    <label for="buyerSignatureBox">Buyer: *</label>
+                                </td>
+                                <td style="width: 35%;">
+                                    <div class="signature-box" 
+                                         id="buyerSignatureBox" 
+                                         tabindex="0"
+                                         role="button"
+                                         aria-label="Click or press Enter to add buyer signature"
+                                         aria-describedby="buyer-signature-error">
+                                        <span class="signature-placeholder">Click here to sign</span>
+                                        <div class="signature-display" id="buyerSignatureDisplay"></div>
+                                    </div>
+                                    <span class="field-error sr-only" id="buyer-signature-error"></span>
+                                </td>
+                                <td style="width: 10%; text-align: right;">Date:</td>
+                                <td style="width: 20%;">
+                                    <span class="signature-line" style="width: 100%;" id="buyerDate"></span>
+                                </td>
+                                <td style="width: 25%; text-align: center;">
+                                    <span style="font-size: 9pt;">(Office use only)</span>
+                                </td>
+                            </tr>
+                            <tr style="height: 0.15in;"></tr>
+                            <tr>
+                                <td>
+                                    <label for="cobuyerSignatureBox">Co-Buyer:</label>
+                                </td>
+                                <td>
+                                    <div class="signature-box" 
+                                         id="cobuyerSignatureBox" 
+                                         tabindex="0"
+                                         role="button"
+                                         aria-label="Click or press Enter to add co-buyer signature">
+                                        <span class="signature-placeholder">Click here to sign</span>
+                                        <div class="signature-display" id="cobuyerSignatureDisplay"></div>
+                                    </div>
+                                </td>
+                                <td style="text-align: right;">Date:</td>
+                                <td>
+                                    <span class="signature-line" style="width: 100%;" id="cobuyerDate"></span>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-    <!-- Signature Modal -->
-    <div id="signatureModal" class="modal" role="dialog" aria-labelledby="signatureModalTitle" aria-modal="true">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h2 class="modal-title" id="signatureModalTitle">Add Signature</h2>
-                <button class="close-btn" id="closeModal" aria-label="Close signature modal">&times;</button>
-            </header>
-            
-            <div class="tab-buttons" role="tablist" aria-label="Signature input methods">
-                <button class="tab-btn active" id="typeTab" role="tab" aria-selected="true" aria-controls="typeContent">Type</button>
-                <button class="tab-btn" id="drawTab" role="tab" aria-selected="false" aria-controls="drawContent">Draw</button>
-            </div>
-            
-            <div id="typeContent" class="tab-content active" role="tabpanel" aria-labelledby="typeTab">
-                <label for="signatureTypeInput" class="sr-only">Type your signature</label>
-                <input type="text" class="type-input" id="signatureTypeInput" placeholder="Type your signature" aria-label="Type your signature here">
-            </div>
-            
-            <div id="drawContent" class="tab-content" role="tabpanel" aria-labelledby="drawTab">
-                <canvas id="signatureCanvas" class="canvas-container" width="400" height="150" aria-label="Draw your signature here" tabindex="0"></canvas>
-            </div>
-            
-            <div style="margin-top: 20px; text-align: right;">
-                <button class="btn btn-secondary" id="clearBtn" style="margin-right: 10px;">Clear</button>
-                <button class="btn" id="saveBtn">Save</button>
-            </div>
-        </div>
-    </div>
+                <div class="footer-section">
+                    <p>Residential Mortgage Loan by: South Texas Origination and Mortgage, LLC</p>
+                    <p>1308 E. Jasmine Avenue, McAllen, Texas 78501</p>
+                    <p>956.330.3859 NMLS# 1974725</p>
+                </div>
+
+                <input type="hidden" id="buyerSignatureData" name="buyerSignatureData">
+                <input type="hidden" id="cobuyerSignatureData" name="cobuyerSignatureData">
+            </form>
+          </div>
+
+          <div class="control-panel">
+              <div id="statusMsg" class="status-msg" role="alert" aria-live="polite"></div>
+              <button type="button" class="btn" id="submitBtn">Submit Application</button>
+              <div id="successBtns" style="display: none; margin-top: 15px;">
+                  <button type="button" class="btn btn-secondary" id="downloadBtn">Download PDF</button>
+                  <button type="button" class="btn btn-secondary" id="printBtn">Print Document</button>
+              </div>
+          </div>
+
+          <!-- Signature Modal -->
+          <div id="signatureModal" class="modal" role="dialog" aria-labelledby="signature-modal-title" aria-modal="true">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h2 class="modal-title" id="signature-modal-title">Add Signature</h2>
+                      <button class="close-btn" id="closeModal" aria-label="Close signature modal">&times;</button>
+                  </div>
+                  
+                  <div class="tab-buttons" role="tablist" aria-label="Signature input methods">
+                      <button class="tab-btn active" 
+                              id="typeTab" 
+                              role="tab" 
+                              aria-selected="true" 
+                              aria-controls="typeContent">Type</button>
+                      <button class="tab-btn" 
+                              id="drawTab" 
+                              role="tab" 
+                              aria-selected="false" 
+                              aria-controls="drawContent">Draw</button>
+                  </div>
+                  
+                  <div id="typeContent" class="tab-content active" role="tabpanel" aria-labelledby="typeTab">
+                      <label for="signatureTypeInput" class="sr-only">Type your signature</label>
+                      <input type="text" 
+                             class="type-input" 
+                             id="signatureTypeInput" 
+                             placeholder="Type your signature"
+                             aria-describedby="type-signature-help">
+                      <div id="type-signature-help" class="sr-only">
+                        Type your name as you would like it to appear as your signature
+                      </div>
+                  </div>
+                  
+                  <div id="drawContent" class="tab-content" role="tabpanel" aria-labelledby="drawTab">
+                      <canvas id="signatureCanvas" 
+                              class="canvas-container" 
+                              width="400" 
+                              height="150"
+                              role="img"
+                              aria-label="Signature drawing area"
+                              tabindex="0"></canvas>
+                      <div class="sr-only">
+                        Use mouse or touch to draw your signature on the canvas
+                      </div>
+                  </div>
+                  
+                  <div style="margin-top: 20px; text-align: right;">
+                      <button class="btn btn-secondary" id="clearBtn" style="margin-right: 10px;">Clear</button>
+                      <button class="btn" id="saveBtn">Save</button>
+                  </div>
+              </div>
+          </div>
 
           <footer class="form-footer">
             <p>Need assistance? <a href="#contact">Contact our team</a> for help with your application.</p>
@@ -1286,7 +1594,7 @@ title: Individual Application - Florida Estates Phase 2
         <div class="footer-grid">
           <div class="footer-about">
             <div class="footer-logo">
-              <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Logo" width="70" height="70" loading="lazy" decoding="async">
+              <img src="/Rio Tierra Logo.webp" alt="Rio Tierra Real Estate Logo" width="70" height="70">
             </div>
             <p class="footer-desc">Rio Tierra Real Estate specializes in creating exceptional communities with a focus on quality, sustainability, and innovative design.</p>
           </div>
@@ -1329,159 +1637,300 @@ title: Individual Application - Florida Estates Phase 2
       <i class="fas fa-chevron-up" aria-hidden="true"></i>
     </button>
   </footer>
+
   <script>
-    // UPDATED BACKEND URL - Your actual Render URL
+    // Performance optimization - defer non-critical initialization
     const BACKEND_URL = 'https://holand-pdf-storage.onrender.com';
-
-    // Initialize EmailJS
-    emailjs.init('YvkwnfiMmHhEc2zjh');
-
-    // Mobile menu functionality
+    
+    // Initialize critical functionality immediately
     document.addEventListener('DOMContentLoaded', function() {
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navbarLinks = document.querySelector('.navbar-links');
-      
-      if (mobileMenuBtn && navbarLinks) {
-        mobileMenuBtn.addEventListener('click', function() {
-          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-          
-          mobileMenuBtn.classList.toggle('active');
-          navbarLinks.classList.toggle('active');
-          
-          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-        });
-        
-        document.addEventListener('click', function(e) {
-          if (!mobileMenuBtn.contains(e.target) && !navbarLinks.contains(e.target)) {
-            mobileMenuBtn.classList.remove('active');
-            navbarLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
-        
-        navbarLinks.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape') {
-            mobileMenuBtn.classList.remove('active');
-            navbarLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.focus();
-          }
-        });
-      }
-
-      initializeCanvas();
+      initializeCriticalFeatures();
     });
 
-    // Form functionality
-    const form = document.getElementById('purchaseForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const downloadBtn = document.getElementById('downloadBtn');
-    const printBtn = document.getElementById('printBtn');
-    const loadingOverlay = document.getElementById('loadingOverlay');
-    const statusMsg = document.getElementById('statusMsg');
-    const successBtns = document.getElementById('successBtns');
+    // Defer heavy libraries
+    window.addEventListener('load', function() {
+      initializeHeavyFeatures();
+    });
 
-    // Modal elements
-    const modal = document.getElementById('signatureModal');
-    const closeModal = document.getElementById('closeModal');
-    const typeTab = document.getElementById('typeTab');
-    const drawTab = document.getElementById('drawTab');
-    const typeContent = document.getElementById('typeContent');
-    const drawContent = document.getElementById('drawContent');
-    const signatureTypeInput = document.getElementById('signatureTypeInput');
-    const signatureCanvas = document.getElementById('signatureCanvas');
-    const clearBtn = document.getElementById('clearBtn');
-    const saveBtn = document.getElementById('saveBtn');
+    function initializeCriticalFeatures() {
+      setupMobileMenu();
+      setupFormValidation();
+      setupFinancialCalculations();
+      setupFormFormatting();
+      setCurrentDate();
+    }
 
-    // Signature boxes
-    const buyerSigBox = document.getElementById('buyerSignatureBox');
-    const cobuyerSigBox = document.getElementById('cobuyerSignatureBox');
+    function initializeHeavyFeatures() {
+      // Initialize EmailJS only when ready
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init('YvkwnfiMmHhEc2zjh');
+      }
+      
+      initializeCanvas();
+      setupSignatureHandlers();
+      setupFormSubmission();
+    }
 
-    // State variables
+    // Mobile menu with improved accessibility
+    function setupMobileMenu() {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navbarLinks = document.getElementById('navbar-links');
+      
+      if (!mobileMenuBtn || !navbarLinks) return;
+      
+      mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+      
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!mobileMenuBtn.contains(e.target) && !navbarLinks.contains(e.target)) {
+          closeMobileMenu();
+        }
+      });
+      
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbarLinks.classList.contains('active')) {
+          closeMobileMenu();
+          mobileMenuBtn.focus();
+        }
+      });
+    }
+
+    function toggleMobileMenu() {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navbarLinks = document.getElementById('navbar-links');
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      
+      mobileMenuBtn.classList.toggle('active');
+      navbarLinks.classList.toggle('active');
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+    }
+
+    function closeMobileMenu() {
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const navbarLinks = document.getElementById('navbar-links');
+      
+      mobileMenuBtn.classList.remove('active');
+      navbarLinks.classList.remove('active');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    // Enhanced form validation with accessibility
+    function setupFormValidation() {
+      const form = document.getElementById('purchaseForm');
+      const inputs = form.querySelectorAll('input[required]');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', () => validateField(input));
+        input.addEventListener('input', () => clearFieldError(input));
+      });
+    }
+
+    function validateField(field) {
+      const value = field.value.trim();
+      const isValid = value !== '' && field.checkValidity();
+      
+      field.setAttribute('aria-invalid', !isValid);
+      
+      if (!isValid) {
+        showFieldError(field, getErrorMessage(field));
+      } else {
+        clearFieldError(field);
+      }
+      
+      return isValid;
+    }
+
+    function showFieldError(field, message) {
+      const errorId = field.getAttribute('aria-describedby');
+      const errorElement = document.getElementById(errorId);
+      
+      if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.classList.remove('sr-only');
+        errorElement.classList.add('field-error');
+      }
+    }
+
+    function clearFieldError(field) {
+      const errorId = field.getAttribute('aria-describedby');
+      const errorElement = document.getElementById(errorId);
+      
+      if (errorElement) {
+        errorElement.textContent = '';
+        errorElement.classList.add('sr-only');
+        errorElement.classList.remove('field-error');
+      }
+      
+      field.setAttribute('aria-invalid', 'false');
+    }
+
+    function getErrorMessage(field) {
+      if (field.type === 'email' && field.value) {
+        return 'Please enter a valid email address';
+      }
+      return `${field.labels[0]?.textContent.replace('*', '').trim() || 'This field'} is required`;
+    }
+
+    // Financial calculations with error handling
+    function setupFinancialCalculations() {
+      const purchasePrice = document.getElementById('purchasePrice');
+      const downPayment = document.getElementById('downPayment');
+      const loanAmount = document.getElementById('loanAmount');
+      const termMonths = document.getElementById('termMonths');
+      const termYears = document.getElementById('termYears');
+
+      if (purchasePrice && downPayment && loanAmount) {
+        purchasePrice.addEventListener('input', calculateLoan);
+        downPayment.addEventListener('input', calculateLoan);
+      }
+
+      if (termMonths && termYears) {
+        termMonths.addEventListener('input', function() {
+          const months = parseInt(this.value) || 0;
+          termYears.value = months > 0 ? (months / 12).toFixed(1) : '';
+        });
+
+        termYears.addEventListener('input', function() {
+          const years = parseFloat(this.value) || 0;
+          termMonths.value = years > 0 ? Math.round(years * 12) : '';
+        });
+      }
+    }
+
+    function calculateLoan() {
+      const price = parseFloat(document.getElementById('purchasePrice').value) || 0;
+      const down = parseFloat(document.getElementById('downPayment').value) || 0;
+      const loan = Math.max(0, price - down);
+      document.getElementById('loanAmount').value = loan.toFixed(2);
+    }
+
+    // Form formatting with improved UX
+    function setupFormFormatting() {
+      // Phone number formatting
+      document.querySelectorAll('input[type="tel"]').forEach(input => {
+        input.addEventListener('input', function() {
+          let value = this.value.replace(/\D/g, '');
+          if (value.length >= 6) {
+            value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+          } else if (value.length >= 3) {
+            value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+          }
+          this.value = value;
+        });
+      });
+
+      // SSN formatting
+      document.querySelectorAll('input[id*="SSN"]').forEach(input => {
+        input.addEventListener('input', function() {
+          let value = this.value.replace(/\D/g, '');
+          if (value.length >= 5) {
+            value = value.replace(/(\d{3})(\d{2})(\d{0,4})/, '$1-$2-$3');
+          } else if (value.length >= 3) {
+            value = value.replace(/(\d{3})(\d{0,2})/, '$1-$2');
+          }
+          this.value = value;
+        });
+      });
+    }
+
+    function setCurrentDate() {
+      const today = new Date();
+      const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
+      
+      const buyerDate = document.getElementById('buyerDate');
+      const cobuyerDate = document.getElementById('cobuyerDate');
+      
+      if (buyerDate) buyerDate.textContent = dateStr;
+      if (cobuyerDate) cobuyerDate.textContent = dateStr;
+    }
+
+    // Canvas and signature functionality
     let currentSigTarget = null;
     let ctx = null;
     let isDrawing = false;
     let generatedPDF = null;
     let permanentPdfUrl = null;
 
-    // Set today's date for submission
-    const today = new Date();
-    const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
-
-    // FIXED: Canvas initialization with proper mobile support - WIDER for signatures
     function initializeCanvas() {
-      if (signatureCanvas) {
-        // Set explicit canvas dimensions - MUCH WIDER for horizontal signatures
+      const signatureCanvas = document.getElementById('signatureCanvas');
+      if (!signatureCanvas) return;
+      
+      try {
         const containerWidth = signatureCanvas.parentElement.offsetWidth;
-        const canvasWidth = Math.max(500, containerWidth - 20); // Much wider, minimum 500px
-        const canvasHeight = 180; // Reasonable height for signatures
+        const canvasWidth = Math.max(500, containerWidth - 20);
+        const canvasHeight = 180;
         
         signatureCanvas.width = canvasWidth;
         signatureCanvas.height = canvasHeight;
-        signatureCanvas.style.width = '100%'; // Fill container width
+        signatureCanvas.style.width = '100%';
         signatureCanvas.style.height = canvasHeight + 'px';
         
         ctx = signatureCanvas.getContext('2d');
-        ctx.lineWidth = 3; // Slightly thicker line for better visibility
+        ctx.lineWidth = 3;
         ctx.lineCap = 'round';
         ctx.strokeStyle = '#000080';
         
-        // Set white background
         ctx.fillStyle = 'white';
         ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
         ctx.fillStyle = '#000080';
         
-        console.log(`Canvas initialized: ${canvasWidth}x${canvasHeight}`);
+        setupCanvasEvents();
+      } catch (error) {
+        console.error('Canvas initialization failed:', error);
       }
     }
 
-    // FIXED: Canvas drawing setup
-    function setupCanvasDrawing() {
-      if (!signatureCanvas || !ctx) return;
+    function setupCanvasEvents() {
+      const canvas = document.getElementById('signatureCanvas');
+      if (!canvas) return;
 
       // Mouse events
-      signatureCanvas.addEventListener('mousedown', startDrawing);
-      signatureCanvas.addEventListener('mousemove', draw);
-      signatureCanvas.addEventListener('mouseup', stopDrawing);
-      signatureCanvas.addEventListener('mouseout', stopDrawing);
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseout', stopDrawing);
 
-      // Touch events
-      signatureCanvas.addEventListener('touchstart', handleTouch);
-      signatureCanvas.addEventListener('touchmove', handleTouch);
-      signatureCanvas.addEventListener('touchend', stopDrawing);
+      // Touch events with improved handling
+      canvas.addEventListener('touchstart', handleTouch, { passive: false });
+      canvas.addEventListener('touchmove', handleTouch, { passive: false });
+      canvas.addEventListener('touchend', stopDrawing);
 
-      // Keyboard events for accessibility
-      signatureCanvas.addEventListener('keydown', function(e) {
+      // Keyboard accessibility for canvas
+      canvas.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          // Focus on clear or save button for keyboard users
-          clearBtn.focus();
+          // Focus on type input for keyboard users
+          document.getElementById('typeTab').click();
+          document.getElementById('signatureTypeInput').focus();
         }
       });
     }
 
     function startDrawing(e) {
+      if (!ctx) return;
       isDrawing = true;
-      const rect = signatureCanvas.getBoundingClientRect();
-      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
-      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
+      const rect = e.target.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (e.target.width / rect.width);
+      const y = (e.clientY - rect.top) * (e.target.height / rect.height);
       
       ctx.beginPath();
       ctx.moveTo(x, y);
     }
 
     function draw(e) {
-      if (!isDrawing) return;
+      if (!isDrawing || !ctx) return;
       
-      const rect = signatureCanvas.getBoundingClientRect();
-      const x = (e.clientX - rect.left) * (signatureCanvas.width / rect.width);
-      const y = (e.clientY - rect.top) * (signatureCanvas.height / rect.height);
+      const rect = e.target.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * (e.target.width / rect.width);
+      const y = (e.clientY - rect.top) * (e.target.height / rect.height);
       
       ctx.lineTo(x, y);
       ctx.stroke();
     }
 
     function stopDrawing() {
+      if (!ctx) return;
       isDrawing = false;
       ctx.beginPath();
     }
@@ -1489,108 +1938,147 @@ title: Individual Application - Florida Estates Phase 2
     function handleTouch(e) {
       e.preventDefault();
       const touch = e.touches[0];
-      const mouseEvent = new MouseEvent(e.type === 'touchstart' ? 'mousedown' : 
-                                       e.type === 'touchmove' ? 'mousemove' : 'mouseup', {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      signatureCanvas.dispatchEvent(mouseEvent);
+      const mouseEvent = new MouseEvent(
+        e.type === 'touchstart' ? 'mousedown' : 
+        e.type === 'touchmove' ? 'mousemove' : 'mouseup', 
+        {
+          clientX: touch.clientX,
+          clientY: touch.clientY
+        }
+      );
+      e.target.dispatchEvent(mouseEvent);
     }
 
-    // Modal functions with better mobile support
+    // Signature modal with improved accessibility
+    function setupSignatureHandlers() {
+      const modal = document.getElementById('signatureModal');
+      const closeBtn = document.getElementById('closeModal');
+      const typeTab = document.getElementById('typeTab');
+      const drawTab = document.getElementById('drawTab');
+      const typeContent = document.getElementById('typeContent');
+      const drawContent = document.getElementById('drawContent');
+      const clearBtn = document.getElementById('clearBtn');
+      const saveBtn = document.getElementById('saveBtn');
+      const buyerSigBox = document.getElementById('buyerSignatureBox');
+      const cobuyerSigBox = document.getElementById('cobuyerSignatureBox');
+
+      if (!modal) return;
+
+      // Signature box handlers
+      buyerSigBox?.addEventListener('click', () => openModal(buyerSigBox));
+      cobuyerSigBox?.addEventListener('click', () => openModal(cobuyerSigBox));
+
+      // Keyboard accessibility for signature boxes
+      buyerSigBox?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(buyerSigBox);
+        }
+      });
+
+      cobuyerSigBox?.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(cobuyerSigBox);
+        }
+      });
+
+      // Modal close handlers
+      closeBtn?.addEventListener('click', closeModal);
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Tab handlers with ARIA updates
+      typeTab?.addEventListener('click', () => switchTab('type'));
+      drawTab?.addEventListener('click', () => switchTab('draw'));
+
+      // Button handlers
+      clearBtn?.addEventListener('click', clearSignature);
+      saveBtn?.addEventListener('click', saveSignature);
+
+      // Escape key handler
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    }
+
     function openModal(target) {
       currentSigTarget = target;
+      const modal = document.getElementById('signatureModal');
       modal.classList.add('active');
-      signatureTypeInput.value = '';
       
-      // Focus management for accessibility
-      setTimeout(() => {
-        if (typeContent.classList.contains('active')) {
-          signatureTypeInput.focus();
-        } else {
-          signatureCanvas.focus();
-        }
-      }, 100);
+      // Focus management
+      const firstFocusable = modal.querySelector('button, input, [tabindex]');
+      firstFocusable?.focus();
       
-      // Wait for modal to render, then initialize canvas
+      // Clear inputs
+      document.getElementById('signatureTypeInput').value = '';
+      
+      // Reinitialize canvas after modal is visible
       setTimeout(() => {
         initializeCanvas();
-        setupCanvasDrawing();
-        if (ctx) {
-          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = 'white';
-          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
-          ctx.fillStyle = '#000080';
-        }
-      }, 200); // Longer delay for mobile
+      }, 100);
     }
 
-    function closeModalFn() {
+    function closeModal() {
+      const modal = document.getElementById('signatureModal');
       modal.classList.remove('active');
       currentSigTarget = null;
+      
       // Return focus to the signature box that opened the modal
       if (currentSigTarget) {
         currentSigTarget.focus();
       }
     }
 
-    // Event listeners
-    closeModal.addEventListener('click', closeModalFn);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModalFn();
-    });
+    function switchTab(tabType) {
+      const typeTab = document.getElementById('typeTab');
+      const drawTab = document.getElementById('drawTab');
+      const typeContent = document.getElementById('typeContent');
+      const drawContent = document.getElementById('drawContent');
 
-    // Escape key to close modal
-    modal.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModalFn();
+      if (tabType === 'type') {
+        typeTab.classList.add('active');
+        typeTab.setAttribute('aria-selected', 'true');
+        drawTab.classList.remove('active');
+        drawTab.setAttribute('aria-selected', 'false');
+        typeContent.classList.add('active');
+        drawContent.classList.remove('active');
+        document.getElementById('signatureTypeInput').focus();
+      } else {
+        drawTab.classList.add('active');
+        drawTab.setAttribute('aria-selected', 'true');
+        typeTab.classList.remove('active');
+        typeTab.setAttribute('aria-selected', 'false');
+        drawContent.classList.add('active');
+        typeContent.classList.remove('active');
+        
+        setTimeout(() => {
+          initializeCanvas();
+          document.getElementById('signatureCanvas').focus();
+        }, 50);
       }
-    });
+    }
 
-    // Tab switching
-    typeTab.addEventListener('click', () => {
-      typeTab.classList.add('active');
-      drawTab.classList.remove('active');
-      typeContent.classList.add('active');
-      drawContent.classList.remove('active');
-      typeTab.setAttribute('aria-selected', 'true');
-      drawTab.setAttribute('aria-selected', 'false');
-      signatureTypeInput.focus();
-    });
-
-    drawTab.addEventListener('click', () => {
-      drawTab.classList.add('active');
-      typeTab.classList.remove('active');
-      drawContent.classList.add('active');
-      typeContent.classList.remove('active');
-      drawTab.setAttribute('aria-selected', 'true');
-      typeTab.setAttribute('aria-selected', 'false');
+    function clearSignature() {
+      const typeContent = document.getElementById('typeContent');
       
-      // Longer delay for mobile to ensure proper rendering
-      setTimeout(() => {
-        initializeCanvas();
-        setupCanvasDrawing();
-        signatureCanvas.focus();
-      }, 150);
-    });
-
-    // Clear and save signature
-    clearBtn.addEventListener('click', () => {
       if (typeContent.classList.contains('active')) {
-        signatureTypeInput.value = '';
-        signatureTypeInput.focus();
+        document.getElementById('signatureTypeInput').value = '';
       } else {
         if (ctx) {
-          ctx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
           ctx.fillStyle = 'white';
-          ctx.fillRect(0, 0, signatureCanvas.width, signatureCanvas.height);
+          ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
           ctx.fillStyle = '#000080';
         }
-        signatureCanvas.focus();
       }
-    });
+    }
 
-    saveBtn.addEventListener('click', () => {
+    function saveSignature() {
       if (!currentSigTarget) return;
       
       const display = currentSigTarget.querySelector('.signature-display');
@@ -1599,178 +2087,162 @@ title: Individual Application - Florida Estates Phase 2
         document.getElementById('buyerSignatureData') : 
         document.getElementById('cobuyerSignatureData');
       
-      if (typeContent.classList.contains('active') && signatureTypeInput.value.trim()) {
-        display.innerHTML = `<span class="typed-signature">${signatureTypeInput.value}</span>`;
-        dataField.value = signatureTypeInput.value;
+      const typeContent = document.getElementById('typeContent');
+      const typeInput = document.getElementById('signatureTypeInput');
+      
+      if (typeContent.classList.contains('active') && typeInput.value.trim()) {
+        display.innerHTML = `<span class="typed-signature">${typeInput.value}</span>`;
+        dataField.value = typeInput.value;
         placeholder.style.display = 'none';
-        // Update aria-label to indicate signature is present
-        currentSigTarget.setAttribute('aria-label', 'Signature added - click to change');
-      } else if (drawContent.classList.contains('active') && ctx) {
-        const imageData = signatureCanvas.toDataURL();
-        const img = document.createElement('img');
-        img.src = imageData;
-        img.className = 'drawn-signature';
-        img.alt = 'Drawn signature';
-        display.innerHTML = '';
-        display.appendChild(img);
-        dataField.value = imageData;
-        placeholder.style.display = 'none';
-        // Update aria-label to indicate signature is present
-        currentSigTarget.setAttribute('aria-label', 'Signature added - click to change');
+      } else if (ctx) {
+        try {
+          const imageData = ctx.canvas.toDataURL();
+          const img = document.createElement('img');
+          img.src = imageData;
+          img.className = 'drawn-signature';
+          img.alt = 'Drawn signature';
+          display.innerHTML = '';
+          display.appendChild(img);
+          dataField.value = imageData;
+          placeholder.style.display = 'none';
+        } catch (error) {
+          console.error('Error saving drawn signature:', error);
+          showStatus('Error saving signature. Please try again.', 'error');
+          return;
+        }
       }
       
-      closeModalFn();
-    });
-
-    // Signature box handlers
-    buyerSigBox.addEventListener('click', () => openModal(buyerSigBox));
-    cobuyerSigBox.addEventListener('click', () => openModal(cobuyerSigBox));
-
-    buyerSigBox.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(buyerSigBox);
-      }
-    });
-
-    cobuyerSigBox.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openModal(cobuyerSigBox);
-      }
-    });
-
-    // Financial calculations
-    const purchasePrice = document.getElementById('purchasePrice');
-    const downPayment = document.getElementById('downPayment');
-    const loanAmount = document.getElementById('loanAmount');
-    const termMonths = document.getElementById('termMonths');
-    const termYears = document.getElementById('termYears');
-
-    function calculateLoan() {
-      const price = parseFloat(purchasePrice.value) || 0;
-      const down = parseFloat(downPayment.value) || 0;
-      loanAmount.value = (price - down).toFixed(2);
+      closeModal();
     }
 
-    purchasePrice.addEventListener('input', calculateLoan);
-    downPayment.addEventListener('input', calculateLoan);
+    // Form submission with comprehensive error handling
+    function setupFormSubmission() {
+      const submitBtn = document.getElementById('submitBtn');
+      const downloadBtn = document.getElementById('downloadBtn');
+      const printBtn = document.getElementById('printBtn');
 
-    termMonths.addEventListener('input', function() {
-      const months = parseInt(this.value) || 0;
-      termYears.value = (months / 12).toFixed(1);
-    });
+      submitBtn?.addEventListener('click', handleFormSubmission);
+      downloadBtn?.addEventListener('click', handleDownload);
+      printBtn?.addEventListener('click', handlePrint);
+    }
 
-    termYears.addEventListener('input', function() {
-      const years = parseFloat(this.value) || 0;
-      termMonths.value = Math.round(years * 12);
-    });
-
-    // Phone and SSN formatting
-    document.querySelectorAll('input[type="tel"]').forEach(input => {
-      input.addEventListener('input', function() {
-        let value = this.value.replace(/\D/g, '');
-        if (value.length >= 6) {
-          value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-        } else if (value.length >= 3) {
-          value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+    async function handleFormSubmission(e) {
+      e.preventDefault();
+      
+      if (!validateCompleteForm()) return;
+      
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      const submitBtn = document.getElementById('submitBtn');
+      
+      loadingOverlay.classList.add('active');
+      submitBtn.disabled = true;
+      
+      try {
+        showStatus('Generating PDF...', 'info');
+        generatedPDF = await generatePDF();
+        
+        showStatus('Saving PDF permanently...', 'info');
+        permanentPdfUrl = await uploadPDFToBackend(generatedPDF);
+        
+        showStatus('Sending email...', 'info');
+        await sendEmailNotification();
+        
+        // Success!
+        loadingOverlay.classList.remove('active');
+        showStatus('Application submitted successfully! PDF saved permanently and email sent.', 'success');
+        
+        submitBtn.style.display = 'none';
+        const successBtns = document.getElementById('successBtns');
+        if (successBtns) {
+          successBtns.style.display = 'flex';
+          successBtns.style.justifyContent = 'center';
+          successBtns.style.gap = '10px';
         }
-        this.value = value;
-      });
-    });
+        
+      } catch (error) {
+        loadingOverlay.classList.remove('active');
+        submitBtn.disabled = false;
+        showStatus(`Submission failed: ${error.message}`, 'error');
+        console.error('Submission error:', error);
+      }
+    }
 
-    document.querySelectorAll('input[id*="SSN"]').forEach(input => {
-      input.addEventListener('input', function() {
-        let value = this.value.replace(/\D/g, '');
-        if (value.length >= 5) {
-          value = value.replace(/(\d{3})(\d{2})(\d{0,4})/, '$1-$2-$3');
-        } else if (value.length >= 3) {
-          value = value.replace(/(\d{3})(\d{0,2})/, '$1-$2');
-        }
-        this.value = value;
-      });
-    });
-
-    // Form validation
-    function validateForm() {
-      const required = [
+    function validateCompleteForm() {
+      const requiredFields = [
         'lot', 'block', 'buyerName', 'buyerEmail', 'buyerAddress',
         'buyerCity', 'buyerState', 'buyerZip', 'buyerPhone', 'buyerSSN',
         'purchasePrice', 'downPayment', 'termMonths'
       ];
       
-      let valid = true;
+      let isValid = true;
       
+      // Clear previous errors
       document.querySelectorAll('.field-input').forEach(input => {
-        input.classList.remove('error');
+        input.setAttribute('aria-invalid', 'false');
+        clearFieldError(input);
       });
       
-      required.forEach(id => {
+      // Validate required fields
+      requiredFields.forEach(id => {
         const field = document.getElementById(id);
-        if (!field.value || field.value.trim() === '') {
-          field.classList.add('error');
-          field.setAttribute('aria-invalid', 'true');
-          valid = false;
-        } else {
-          field.setAttribute('aria-invalid', 'false');
+        if (!validateField(field)) {
+          isValid = false;
         }
       });
       
-      const email = document.getElementById('buyerEmail');
-      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-        email.classList.add('error');
-        email.setAttribute('aria-invalid', 'true');
-        valid = false;
-      }
-      
-      if (!document.getElementById('buyerSignatureData').value) {
+      // Validate signature
+      const buyerSignature = document.getElementById('buyerSignatureData');
+      if (!buyerSignature || !buyerSignature.value) {
         showStatus('Please add your signature before submitting.', 'error');
-        valid = false;
+        const sigBox = document.getElementById('buyerSignatureBox');
+        if (sigBox) {
+          sigBox.focus();
+          const errorElement = document.getElementById('buyer-signature-error');
+          if (errorElement) {
+            errorElement.textContent = 'Signature is required';
+            errorElement.classList.remove('sr-only');
+          }
+        }
+        isValid = false;
       }
       
-      return valid;
+      return isValid;
     }
 
-    // Status message display
-    function showStatus(msg, type) {
-      statusMsg.textContent = msg;
-      statusMsg.className = `status-msg ${type} show`;
-    }
-
-    // PDF generation with optimized settings for better text quality
     async function generatePDF() {
       try {
-        const controlPanel = document.querySelector('.control-panel');
-        const formHeader = document.querySelector('.form-header');
-        const formFooter = document.querySelector('.form-footer');
-        
-        controlPanel.style.display = 'none';
-        formHeader.style.display = 'none';
-        formFooter.style.display = 'none';
-        
+        // Wait for libraries to load
         if (typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined') {
-          await new Promise(resolve => setTimeout(resolve, 1000));
+          await new Promise(resolve => setTimeout(resolve, 2000));
         }
         
-        // FIXED: Better settings for text quality
-        const element = document.getElementById('documentPage');
+        // Hide non-printable elements
+        const elementsToHide = [
+          '.control-panel', '.form-header', '.form-footer'
+        ];
         
-        // Get the actual dimensions
+        const hiddenElements = [];
+        elementsToHide.forEach(selector => {
+          const elements = document.querySelectorAll(selector);
+          elements.forEach(el => {
+            hiddenElements.push({ element: el, display: el.style.display });
+            el.style.display = 'none';
+          });
+        });
+        
+        const element = document.getElementById('documentPage');
         const rect = element.getBoundingClientRect();
-        const actualWidth = rect.width;
-        const actualHeight = rect.height;
         
         const options = {
-          scale: 2, // Higher scale for better text quality
+          scale: 2,
           useCORS: true,
           allowTaint: true,
           backgroundColor: '#ffffff',
           logging: false,
           letterRendering: true,
-          width: actualWidth, // Use actual dimensions
-          height: actualHeight,
+          width: rect.width,
+          height: rect.height,
           onclone: function(clonedDoc) {
-            // Ensure fonts are loaded in the cloned document
             const clonedElement = clonedDoc.getElementById('documentPage');
             if (clonedElement) {
               clonedElement.style.fontFamily = '"Times New Roman", Times, serif';
@@ -1780,22 +2252,21 @@ title: Individual Application - Florida Estates Phase 2
         
         const canvas = await html2canvas(element, options);
         
-        controlPanel.style.display = 'block';
-        formHeader.style.display = 'block';
-        formFooter.style.display = 'block';
+        // Restore hidden elements
+        hiddenElements.forEach(({ element, display }) => {
+          element.style.display = display;
+        });
         
         const { jsPDF } = window.jspdf;
         
-        // Calculate proper dimensions to maintain aspect ratio
+        // Calculate dimensions
         const imgWidth = canvas.width;
         const imgHeight = canvas.height;
         const ratio = imgHeight / imgWidth;
         
-        // Standard letter size: 8.5" x 11"
         const pdfWidth = 8.5;
         const pdfHeight = 11;
         
-        // Calculate scaled dimensions to fit within page while maintaining ratio
         let scaledWidth = pdfWidth;
         let scaledHeight = pdfWidth * ratio;
         
@@ -1804,7 +2275,6 @@ title: Individual Application - Florida Estates Phase 2
           scaledWidth = pdfHeight / ratio;
         }
         
-        // Center the content on the page
         const offsetX = (pdfWidth - scaledWidth) / 2;
         const offsetY = (pdfHeight - scaledHeight) / 2;
         
@@ -1815,28 +2285,21 @@ title: Individual Application - Florida Estates Phase 2
           compress: true
         });
         
-        // FIXED: Use PNG for better text quality and proper scaling
-        const imgData = canvas.toDataURL('image/png');
+        const imgData = canvas.toDataURL('image/png', 0.95);
         pdf.addImage(imgData, 'PNG', offsetX, offsetY, scaledWidth, scaledHeight);
         
         return pdf;
         
       } catch (error) {
         console.error('PDF generation error:', error);
-        throw error;
+        throw new Error(`Failed to generate PDF: ${error.message}`);
       }
     }
 
-    // BACKEND INTEGRATION: Upload PDF to S3 with better error handling
     async function uploadPDFToBackend(pdf) {
       try {
-        showStatus('Saving PDF permanently...', 'info');
-        
-        // IMPROVED: Get PDF as blob first, then convert to base64
         const pdfBlob = pdf.output('blob');
-        console.log(`PDF blob size: ${pdfBlob.size} bytes (${(pdfBlob.size / 1024 / 1024).toFixed(2)} MB)`);
         
-        // Convert blob to base64
         const base64Data = await new Promise((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = () => resolve(reader.result);
@@ -1845,9 +2308,10 @@ title: Individual Application - Florida Estates Phase 2
         });
         
         const buyerName = document.getElementById('buyerName').value;
-        const originalName = `Purchase_Agreement_${buyerName.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
+        const today = new Date();
+        const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}-${today.getFullYear()}`;
+        const originalName = `Purchase_Agreement_${buyerName.replace(/\s+/g, '_')}_${dateStr}.pdf`;
         
-        console.log('Uploading to backend...');
         const response = await fetch(`${BACKEND_URL}/upload-pdf-base64`, {
           method: 'POST',
           headers: {
@@ -1862,12 +2326,10 @@ title: Individual Application - Florida Estates Phase 2
         
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
-          console.error('Upload failed:', errorData);
           throw new Error(`Upload failed: ${response.status} - ${errorData.error || 'Unknown error'}`);
         }
         
         const result = await response.json();
-        console.log('Upload successful:', result);
         return result.url;
         
       } catch (error) {
@@ -1876,206 +2338,164 @@ title: Individual Application - Florida Estates Phase 2
       }
     }
 
-    // MAIN FORM SUBMISSION
-    submitBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      
-      if (!validateForm()) return;
-      
-      loadingOverlay.classList.add('active');
-      submitBtn.disabled = true;
-      
-      try {
-        // Step 1: Generate PDF
-        showStatus('Generating PDF...', 'info');
-        generatedPDF = await generatePDF();
-        
-        // Step 2: Upload to backend
-        permanentPdfUrl = await uploadPDFToBackend(generatedPDF);
-        
-        // Step 3: Send email with PDF link
-        showStatus('Sending email...', 'info');
-        const emailData = {
-          buyer_name: document.getElementById('buyerName').value,
-          buyer_email: document.getElementById('buyerEmail').value,
-          lot_number: document.getElementById('lot').value,
-          block_number: document.getElementById('block').value,
-          purchase_price: document.getElementById('purchasePrice').value,
-          submission_date: dateStr,
-          pdf_link: permanentPdfUrl
-        };
-        
-        await emailjs.send('service_vu3hz9m', 'template_t6sxp4j', emailData);
-        
-        // Success!
-        loadingOverlay.classList.remove('active');
-        showStatus('Application submitted successfully! PDF saved permanently and email sent.', 'success');
-        
-        submitBtn.style.display = 'none';
-        if (successBtns) {
-          successBtns.style.display = 'flex';
-          successBtns.style.justifyContent = 'center';
-          successBtns.style.gap = '10px';
-        }
-        
-      } catch (error) {
-        loadingOverlay.classList.remove('active');
-        submitBtn.disabled = false;
-        showStatus(`Submission failed: ${error.message}`, 'error');
-        console.error('Submission error:', error);
+    async function sendEmailNotification() {
+      if (typeof emailjs === 'undefined') {
+        throw new Error('Email service not available');
       }
-    });
+      
+      const today = new Date();
+      const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
+      
+      const emailData = {
+        buyer_name: document.getElementById('buyerName').value,
+        buyer_email: document.getElementById('buyerEmail').value,
+        lot_number: document.getElementById('lot').value,
+        block_number: document.getElementById('block').value,
+        purchase_price: document.getElementById('purchasePrice').value,
+        submission_date: dateStr,
+        pdf_link: permanentPdfUrl
+      };
+      
+      await emailjs.send('service_vu3hz9m', 'template_t6sxp4j', emailData);
+    }
 
-    // Download PDF with Chrome-specific fixes
-    downloadBtn.addEventListener('click', async () => {
+    function handleDownload() {
       if (permanentPdfUrl) {
-        try {
-          // Chrome-specific: Use fetch with credentials
-          const response = await fetch(permanentPdfUrl, {
-            method: 'GET',
-            credentials: 'omit', // Avoid CORS issues
-            cache: 'no-cache'
-          });
-          
-          if (response.ok) {
-            const blob = await response.blob();
-            
-            // Chrome-friendly download method
-            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-              // IE/Edge fallback
-              window.navigator.msSaveOrOpenBlob(blob, `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`);
-            } else {
-              // Modern browsers (Chrome-optimized)
-              const url = window.URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.style.display = 'none';
-              a.href = url;
-              a.download = `Purchase_Agreement_${document.getElementById('buyerName').value.replace(/\s+/g, '_')}_${dateStr.replace(/\//g, '-')}.pdf`;
-              
-              // Chrome requires the element to be in DOM
-              document.body.appendChild(a);
-              a.click();
-              
-              // Cleanup
-              setTimeout(() => {
-                document.body.removeChild(a);
-                window.URL.revokeObjectURL(url);
-              }, 100);
-            }
-            showStatus('PDF downloaded successfully!', 'success');
-          } else {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
-        } catch (error) {
-          console.log('Direct download failed, trying popup method:', error);
-          
-          // Fallback: Create a user-initiated popup
-          const popupFeatures = 'width=800,height=600,scrollbars=yes,resizable=yes';
-          const popup = window.open('', '_blank', popupFeatures);
-          
-          if (popup) {
-            popup.location.href = permanentPdfUrl;
-            showStatus('PDF opened in popup (allow popups if blocked)...', 'info');
-          } else {
-            // Last resort: try direct navigation
-            window.location.href = permanentPdfUrl;
-            showStatus('Downloading PDF... (check your downloads folder)', 'info');
-          }
-        }
+        downloadFromURL(permanentPdfUrl);
       } else if (generatedPDF) {
-        // Fallback to local PDF
-        const buyerName = document.getElementById('buyerName').value.replace(/\s+/g, '_') || 'Unknown_Buyer';
-        const filename = `Purchase_Agreement_${buyerName}_${dateStr.replace(/\//g, '-')}.pdf`;
-        generatedPDF.save(filename);
-        showStatus('PDF downloaded locally!', 'success');
+        downloadLocalPDF();
       } else {
         showStatus('No PDF available. Please submit the form first.', 'error');
       }
-    });
+    }
 
-    // Print PDF with Chrome-specific fixes
-    printBtn.addEventListener('click', async () => {
-      if (permanentPdfUrl) {
-        try {
-          // Chrome-specific: Use fetch with proper headers
-          const response = await fetch(permanentPdfUrl, {
-            method: 'GET',
-            credentials: 'omit',
-            cache: 'no-cache'
-          });
+    async function downloadFromURL(url) {
+      try {
+        const response = await fetch(url, { 
+          method: 'GET',
+          credentials: 'omit',
+          cache: 'no-cache'
+        });
+        
+        if (response.ok) {
+          const blob = await response.blob();
+          const downloadURL = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = downloadURL;
+          a.download = getFilename();
           
-          if (response.ok) {
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            
-            // Chrome-optimized print method
-            const printWindow = window.open('', '_blank', 'width=800,height=600,scrollbars=yes');
-            
-            if (printWindow) {
-              printWindow.document.write(`
-                <html>
-                  <head>
-                    <title>Purchase Agreement</title>
-                    <style>
-                      body { margin: 0; padding: 0; }
-                      iframe { width: 100%; height: 100vh; border: none; }
-                    </style>
-                  </head>
-                  <body>
-                    <iframe src="${url}" onload="setTimeout(() => { window.print(); }, 1000);"></iframe>
-                  </body>
-                </html>
-              `);
-              printWindow.document.close();
-              
-              // Cleanup after print
-              setTimeout(() => {
-                window.URL.revokeObjectURL(url);
-              }, 5000);
-            } else {
-              throw new Error('Popup blocked');
-            }
-          } else {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-          }
-        } catch (error) {
-          console.log('Direct print failed, trying popup method:', error);
+          document.body.appendChild(a);
+          a.click();
           
-          // Fallback: Simple popup for Chrome
-          const popupFeatures = 'width=1000,height=700,scrollbars=yes,resizable=yes,toolbar=yes';
-          const popup = window.open(permanentPdfUrl, '_blank', popupFeatures);
+          setTimeout(() => {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(downloadURL);
+          }, 100);
           
-          if (popup) {
-            showStatus('PDF opened in new window for printing (use Ctrl+P to print)...', 'info');
-          } else {
-            showStatus('Popup blocked! Please disable popup blocker and try again.', 'error');
-          }
+          showStatus('PDF downloaded successfully!', 'success');
+        } else {
+          throw new Error('Download failed');
         }
+      } catch (error) {
+        // Fallback: open in new window
+        window.open(url, '_blank');
+        showStatus('PDF opened in new window...', 'info');
+      }
+    }
+
+    function downloadLocalPDF() {
+      const filename = getFilename();
+      generatedPDF.save(filename);
+      showStatus('PDF downloaded locally!', 'success');
+    }
+
+    function getFilename() {
+      const buyerName = document.getElementById('buyerName').value.replace(/\s+/g, '_') || 'Unknown_Buyer';
+      const today = new Date();
+      const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}-${today.getFullYear()}`;
+      return `Purchase_Agreement_${buyerName}_${dateStr}.pdf`;
+    }
+
+    function handlePrint() {
+      if (permanentPdfUrl) {
+        printFromURL(permanentPdfUrl);
       } else if (generatedPDF) {
-        // Fallback to local PDF
+        printLocalPDF();
+      } else {
+        showStatus('No PDF available for printing.', 'error');
+      }
+    }
+
+    function printFromURL(url) {
+      try {
+        const printWindow = window.open(url, '_blank', 'width=1000,height=700,scrollbars=yes,resizable=yes,toolbar=yes');
+        if (printWindow) {
+          showStatus('PDF opened in new window for printing...', 'info');
+        } else {
+          showStatus('Popup blocked! Please disable popup blocker and try again.', 'error');
+        }
+      } catch (error) {
+        showStatus('Print failed. Please try downloading the PDF instead.', 'error');
+      }
+    }
+
+    function printLocalPDF() {
+      try {
         const pdfBlob = generatedPDF.output('blob');
         const pdfUrl = URL.createObjectURL(pdfBlob);
-        const printWindow = window.open(pdfUrl);
+        const printWindow = window.open(pdfUrl, '_blank');
         if (printWindow) {
           printWindow.onload = () => {
             printWindow.print();
           };
         }
-      } else {
-        showStatus('No PDF available for printing.', 'error');
+      } catch (error) {
+        showStatus('Print failed. Please try downloading the PDF instead.', 'error');
+      }
+    }
+
+    // Status message function with proper ARIA
+    function showStatus(msg, type) {
+      const statusMsg = document.getElementById('statusMsg');
+      if (!statusMsg) return;
+      
+      statusMsg.textContent = msg;
+      statusMsg.className = `status-msg ${type} show`;
+      
+      // Auto-hide non-error messages after 5 seconds
+      if (type !== 'error') {
+        setTimeout(() => {
+          statusMsg.classList.remove('show');
+        }, 5000);
+      }
+    }
+
+    // Focus management for better accessibility
+    document.addEventListener('keydown', (e) => {
+      // Skip link functionality
+      if (e.target.classList.contains('skip-link') && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.focus();
+          target.scrollIntoView();
+        }
       }
     });
 
-    // Focus management
-    document.querySelectorAll('.field-input').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.style.background = 'rgba(255, 255, 240, 0.5)';
+    // Performance monitoring
+    if ('performance' in window) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          if (perfData && perfData.loadEventEnd > 3000) {
+            console.warn('Page load time exceeded 3 seconds:', perfData.loadEventEnd);
+          }
+        }, 0);
       });
-      
-      input.addEventListener('blur', function() {
-        this.style.background = 'transparent';
-      });
-    });
+    }
   </script>
 </body>
 </html>
