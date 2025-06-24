@@ -12,21 +12,7 @@ title: Individual Application - Florida Estates Phase 2
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#c1743c">
   <link rel="canonical" href="https://riotierra.com/individual-application/">
-  
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Rio Tierra | Individual Application Form">
-  <meta property="og:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/Rio Tierra Logo.webp">
-  <meta property="og:url" content="https://riotierra.com/individual-application/">
-  <meta property="og:site_name" content="Rio Tierra Real Estate">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rio Tierra | Individual Application Form">
-  <meta name="twitter:description" content="Apply to purchase premium residential lots in Rio Tierra Real Estate's exclusive developments.">
-  <meta name="twitter:image" content="/Rio Tierra Logo.webp">
-  
+
   <title>Rio Tierra | Individual Application Form</title>
   
   <!-- Preload Critical Resources -->
@@ -1459,10 +1445,10 @@ title: Individual Application - Florida Estates Phase 2
                     <table class="signature-table" role="table" aria-label="Signature Section">
                         <tbody>
                             <tr>
-                                <td style="width: 10%;">
+                                <td style="width: 20%;">
                                     <label for="buyerSignatureBox">Buyer: *</label>
                                 </td>
-                                <td style="width: 35%;">
+                                <td style="width: 80%;">
                                     <div class="signature-box" 
                                          id="buyerSignatureBox" 
                                          tabindex="0"
@@ -1474,20 +1460,13 @@ title: Individual Application - Florida Estates Phase 2
                                     </div>
                                     <span class="field-error sr-only" id="buyer-signature-error"></span>
                                 </td>
-                                <td style="width: 10%; text-align: right;">Date:</td>
-                                <td style="width: 20%;">
-                                    <span class="signature-line" style="width: 100%;" id="buyerDate"></span>
-                                </td>
-                                <td style="width: 25%; text-align: center;">
-                                    <span style="font-size: 9pt;">(Office use only)</span>
-                                </td>
                             </tr>
                             <tr style="height: 0.15in;"></tr>
                             <tr>
-                                <td>
+                                <td style="width: 20%;">
                                     <label for="cobuyerSignatureBox">Co-Buyer:</label>
                                 </td>
-                                <td>
+                                <td style="width: 80%;">
                                     <div class="signature-box" 
                                          id="cobuyerSignatureBox" 
                                          tabindex="0"
@@ -1497,11 +1476,15 @@ title: Individual Application - Florida Estates Phase 2
                                         <div class="signature-display" id="cobuyerSignatureDisplay"></div>
                                     </div>
                                 </td>
-                                <td style="text-align: right;">Date:</td>
-                                <td>
-                                    <span class="signature-line" style="width: 100%;" id="cobuyerDate"></span>
+                            </tr>
+                            <tr style="height: 0.2in;"></tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div style="display: flex; align-items: baseline; margin-top: 0.1in;">
+                                        <span class="label" style="margin-right: 0.2in;">Date Accepted by Seller (Office use only):</span>
+                                        <span class="signature-line" style="width: 2.5in; border-bottom: 1pt solid #000; display: inline-block; height: 0.3in;"></span>
+                                    </div>
                                 </td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1835,14 +1818,7 @@ title: Individual Application - Florida Estates Phase 2
     }
 
     function setCurrentDate() {
-      const today = new Date();
-      const dateStr = `${(today.getMonth() + 1).toString().padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}/${today.getFullYear()}`;
-      
-      const buyerDate = document.getElementById('buyerDate');
-      const cobuyerDate = document.getElementById('cobuyerDate');
-      
-      if (buyerDate) buyerDate.textContent = dateStr;
-      if (cobuyerDate) cobuyerDate.textContent = dateStr;
+      // Date fields removed - seller will fill in acceptance date manually
     }
 
     // Canvas and signature functionality
